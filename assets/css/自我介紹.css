@@ -3,58 +3,101 @@
 html {
     font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
 }
+body{
+    background-color: white;
+}
 .menu{
     height: 100vh;
     width: 300px;
-    background-color: #a5a78cd5;
+    background-color: rgb(148, 125, 95);
     float: left;
+    position: relative;
 }
-.title{
-    width: 100%;
-    height: 100px;
+.menu ul li{
+    font-size: 1.3em;
+    font-weight: 300;
+    padding: 10px 30px;
+    color: white;
+    transition: 0.25s;
+}
+.menu ul li:hover{
+    background-color: #e29e9e;
+    color: #4a4a4a
+}
+.menu .title{
+    padding: 20px 15px;
     background-color: #4a4a4a
+}
+.menu .title .min_picture{
+    background: url("../../images/學士服大頭貼.jpg") no-repeat;
+    background-size: 91px auto;
+    height: 91px;
+    width: 91px;
+    border-radius: 50px;
+    display: inline-block;
+}
+.menu .link {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    text-align: center;
+}
+.menu .link div{
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 10px 10px;
+}
+.menu .link .facebook{
+    background: url("../../images/icons8-facebook.svg") 15px no-repeat;
+    background-size: auto 20px;
+}
+.menu .link .github{
+    background: url("../../images/icons8-github.svg") 13px no-repeat;
+    background-size: 15px auto;
+}
+.menu .link .gmail{
+    background: url("../../images/icons8-gmail.svg") 12px no-repeat;
+    background-size: 20px auto;
 }
 .content{
     width: 100vw;
     height: 100vh;
     background-color: white;
 }
-.menu .title .min_picture{
-    background: url("../../images/學士服大頭貼.jpg") no-repeat;
-    background-size: 50px auto;
-    height: 50px;
-    width: 50px;
-    display: inline-block;
-}
-.menu .link {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: rgb(138, 255, 127);
-}
-.menu .link div{
-    height: 20px;
-    width: 20px;
-    display: inline-block;
-}
-.menu .link .facebook{
-    background: url("../../images/icons8-facebook.svg") no-repeat;
-    background-size: auto 20px;
-}
-.menu .link .github{
-    background: url("../../images/icons8-github.svg") no-repeat;
-    background-size: 20px auto;
-}
-.menu .link .gmail{
-    background: url("../../images/icons8-gmail.svg") no-repeat;
-    background-size: auto 20px;
-}
 .content .banner{
     width: 100%;
     height: 300px;
-    background-color: #7c2626
+    background: url("../../images/coffee_louisa.jpg") 15px no-repeat;
+    background-size: cover;
+}
+.content .banner div{
+    color: #ffffff00;
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: top;
+}
+.content .banner .picture{
+    background: url("../../images/學士服大頭貼.jpg") no-repeat;
+    background-size: 150px auto;
+    height: 150px;
+    width: 150px;
+    border-radius: 150px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 60px;
+}
+.content .banner .banner-div .banner-name{
+    font-size: 2em;
 }
 .content .news{
-    background-color: beige;
+    background-color: white;
+}
+.content .banner span{
+    font-size: 1.5em;
+    color: greenyellow;
 }
