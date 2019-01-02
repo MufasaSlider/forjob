@@ -1,12 +1,9 @@
-class Car{
-    constructor(color){
-        this.color=color;
-       }
-}
-let car= new Car("green");
-let carProto=Object.getPrototypeOf(car);
-console.log(carProto);
-let objProto=Object.getPrototypeOf(carProto);
-console.log(objProto);
-let lastOne=Object.getPrototypeOf(objProto);
-console.log(lastOne);
+$(function() {
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 220)  {          /* 要滑動到選單的距離 */
+         $('.dropDowns').addClass('navFixed');   /* 幫選單加上固定效果 */
+      } else {
+        $('.dropDowns').removeClass('navFixed'); /* 移除選單固定效果 */
+      }
+    });
+  });
