@@ -1,60 +1,58 @@
 @import 'reset.css';
 
-html {
-    font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+body {
+    font-size: 13px;
+    line-height: 24px;
+    font-family: "Microsoft JhengHei", "微軟正黑體", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #666;
 }
-.head{
-    background-color: #003344;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    padding: 10px;
+header{
+    width: 100%;
+    height: 300px;
+    background: url("../../images/header-coffee.jpg") no-repeat;
+    background-size: cover;
 }
-.content{
-    width: 1000px;
-    background-color: #99FFFF;
-    margin-left: auto;
-    margin-right: auto;
-}
-.box{
-    width: 280px;
-    padding: 10px;
-    margin: 13px;
+nav{
+    width: 100%;
+    height: 55px;
+    max-height: 55px;
+    line-height: 53px;
+    border-bottom: 1px solid #ccc;
     background-color: white;
+    position: absolute;
     display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    height: 150px;
-    line-height: 30px;
+}
 
+.navFixed{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    min-width: 100%;
+    height: 50px;
+    opacity: 0.9;
+    transition: all 1s ease-out;
 }
-.title{
-    font-weight: bold;
-    font-size: 18px;
-    color:#770077;
+.module-left{
+    float: left;
 }
-@media screen and (max-width: 600px){
-    .head{font-size: 24px;}
-    .content{width: 100%;text-align:center;}
+.module-right{
+    float: right;
+    display: block;
+    height: 50px;
+    width: 1000px;
 }
-/*表格開始*/
-table{
-    width: 400px;border: 1px solid #888888;
-    border-collapse: collapse;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.menu{
+    height: 50px;
+    width: 1000px;
+    display: inline-block;
 }
-td{
-    border-bottom : 1px solid #888888;
-    padding: 10px
+.menu>li{
+    height: 50px;
+    width: 200px;
+    display: inline-block;
 }
-tr:nth-child(1){/*表格中的第一對*/
-    background-color: #7788aa;
-    color: #ffffff
+main{
+    height: 3000px;
 }
-tr:nth-child(even){
-    background-color: #e8e8e8;
-}
-/*表格結束*/
