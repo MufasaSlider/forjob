@@ -1,9 +1,21 @@
-$(function() {
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 220)  {          /* 要滑動到選單的距離 */
-         $('.dropDowns').addClass('navFixed');   /* 幫選單加上固定效果 */
-      } else {
-        $('.dropDowns').removeClass('navFixed'); /* 移除選單固定效果 */
-      }
+$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 220) { 
+            $('.dropDowns').addClass('navFixed'); 
+        } else {
+            $('.dropDowns').removeClass('navFixed');
+        }
     });
-  });
+});
+/*
+function realTime() {
+    var now = new Date();
+    document.getElementById("timer").innerHTML = ("現在時間："+now.getHours()).toString() + ":" + now.getMinutes().toString() +
+        ":" + now.getSeconds().toString();
+    window.setInterval("realTime()", 1000);
+}
+
+window.onload=function(){
+    realTime();
+}
+*/
