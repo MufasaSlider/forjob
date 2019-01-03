@@ -6,12 +6,7 @@ body {
     font-family: "Microsoft JhengHei", "微軟正黑體", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #666;
 }
-header{
-    width: 100%;
-    height: 300px;
-    background: url("../../images/header-coffee.jpg") no-repeat;
-    background-size: cover;
-}
+
 nav{
     width: 100%;
     height: 55px;
@@ -20,7 +15,7 @@ nav{
     border-bottom: 1px solid #ccc;
     background-color: white;
     position: absolute;
-    display: inline-block;
+    opacity: 0.92;
 }
 
 .navFixed{
@@ -31,27 +26,96 @@ nav{
     margin-top: 0;
     min-width: 100%;
     height: 50px;
-    opacity: 0.9;
+    opacity: 0.92;
     transition: all 1s ease-out;
 }
 .module-left{
+    height: 55px;
+    width: 200px;
+    font-size: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    position: relative;
     float: left;
 }
+.module-left a{
+    text-decoration: none;
+}
 .module-right{
+    height: 55px;
+    width: 800px;
+    font-size: 1.2em;
+    text-align: center;
+    position: relative;
+    margin-right: 0px;
     float: right;
-    display: block;
-    height: 50px;
-    width: 1000px;
 }
 .menu{
-    height: 50px;
-    width: 1000px;
-    display: inline-block;
+    height: 55px;
+    width: 800px;
 }
 .menu>li{
-    height: 50px;
-    width: 200px;
+    height: 55px;
+    width: 180px;
     display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+.menu>li ul{
+    font-size: 1em;
+    width: 180px;
+    padding: 8px 0;
+    border-bottom: 0.5px solid #ccc;
+    border-left: 0.5px solid #ccc;
+    border-right: 0.5px solid #ccc;
+    background: white;
+    position: absolute;
+    z-index: 20;
+    opacity: 0;
+    transition: all .3s ease;
+}
+.menu>li:hover>ul{
+    opacity: 1;
+}
+.menu li:hover{
+    opacity: 2;
+    font: bold;
+    background-color: antiquewhite;
+}
+.has-dropDown:after{
+    background-color: aliceblue;
+}
+header{
+    width: 100%;
+    height: 350px;
+    background: url("../../images/header-coffee.jpg") no-repeat;
+    background-size: cover;
+}
+.banner-div{
+    width: 700px;
+    height: 200px;
+    margin-left: 100px;
+    margin-top: 100px;
+    color: whitesmoke;
+    display: inline-block;
+}
+.banner-div div{
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 2em;
+    line-height: 1.6em;
+}
+.banner-head{
+    background: url("../../images/台南玩大頭貼.jpg") -40px -40px no-repeat;
+    background-size: 220px auto;
+    height: 180px;
+    width: 180px;
+    border-radius: 180px;
+    display: inline-block;
+    margin-right: 40px;
+}
+.banner-div span{
+    font-size: 0.7em;
 }
 main{
     height: 3000px;
