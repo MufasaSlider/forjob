@@ -16,9 +16,7 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/main.css" />
 
-	<!--JS-->
-	<script src="assets/js/jquery-3.3.1.min.js"></script>
-	<script src="assets/js/main.js"></script>
+	
 
 
 </head>
@@ -31,24 +29,25 @@
 			<ul class="menu">
 				<li class="has-dropDown">其他功能展示
 					<ul>
-						<li><a>網頁影片</a></li>
+						<li><a href="#mark-ajax" onclick="getData('最新電影.html')">網頁影片</a></li>
 						<li><a>canvas繪圖</a></li>
 						<li><a>影像處理</a></li>
 						<li><a>React Component</a></li>
 						<li><a>Google API</a></li>
 					</ul>
 				</li>
-				<li><a>履歷與自傳</a></li>
+				<li><a href="https://thegreata.github.io/forjob/自我介紹.htm">履歷與自傳</a></li>
 				<li><a>聯絡我</a></li>
 				<li id="timer"></li>
 			</ul>
 		</div>
 	</nav>
 	<header>
+		<div name="top"></div>
 		<div class="banner-div">
 			<div class="banner-head"></div>
 			<div>
-				您好我是立翔<br />   
+				您好我是立翔<br />
 				<span>
 					這是我的測試網站<br />
 					有任何建議歡迎告訴我喔～
@@ -57,11 +56,34 @@
 		</div>
 	</header>
 	<main>
-		<article></article>
+		<article>
+			<a name="mark-ajax"></a>
+			<div>
+				<span onclick="getData('HTML5_video.html')">video</span>
+				<span onclick="getData('最新電影.html')">最新</span>
+
+			</div>
+			<hr/>
+			<div id="ajaxChange"></div>
+		</article>
 		<aside></aside>
 	</main>
-	<footer></footer>
+	<footer>
+		<div class="footer-text">
+			非常感謝您看完我的網站<br/>
+			如果有任何事情歡迎聯絡我<br/>
+			我的E-mail：au222cc@gmail.com<br/>
+		</div>
+		<a href="#top" class="back-to-top">Top</a>
+	</footer>
+
+
+	
 
 </body>
+
+<!--JS-->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/main.js"></script>
 
 </html>
