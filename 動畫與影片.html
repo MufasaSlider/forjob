@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+    <meta name="description" content="Practice">
+    <meta name="author" content="Austin Lin">
+    <title>立翔der測試網站</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style type="text/css">
+        /*這是立體方塊*/
+        .top-box {
+            width: 240px;
+            height: 60px;
+            background-color: lightgray;
+            transform: skew(-45deg, 0deg) translate(30px, 0px);
+        }
+
+        .front-box {
+            width: 240px;
+            height: 240px;
+            background-color: darkgray;
+            display: inline-block;
+        }
+
+        .right-box {
+            width: 60px;
+            height: 240px;
+            background-color: gray;
+            display: inline-block;
+            transform: skew(0deg, -45deg) translate(0px, -30px);
+        }
+
+        .box-blink {
+            position: relative;
+            top: 50px;
+            left: 38%;
+        }
+
+        .box-blink-btn {
+            position: relative;
+            left: 4%;
+            top: 10px;
+            bottom: 30px;
+        }
+
+        /*這是閃爍動畫*/
+        .effect {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .videoBox {
+            position: relative;
+            top: 60px;
+            left: 18%;
+        }
+
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <nav class="dropDowns">
+        <div class="module-left"><a href="https://thegreata.github.io/forjob/">My Github</a></div>
+        <div class="module-right">
+            <ul class="menu">
+                <li class="has-dropDown">其他功能展示
+                    <ul>
+                        <li><a>canvas繪圖</a></li>
+                        <li><a>影像處理</a></li>
+                        <li><a href="./動畫與影片.html">動畫與影片</a></li>
+                        <li><a>ajax+React Component</a></li>
+                        <li><a>Google API</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://thegreata.github.io/forjob/自我介紹.htm">履歷與自傳</a></li>
+                <li><a>聯絡我</a></li>
+                <li id="timer"></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div name="top"></div>
+        <div class="banner-div">
+            <div class="banner-head"></div>
+            <div>
+                您好我是立翔<br />
+                <span>
+                    這個頁面可以播放簡單的影片跟動畫
+                </span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <article>
+            <div class="box-blink">
+                <div class="top-box" id="blinking1"></div>
+                <div class="front-box" id="blinking2"></div><div class="right-box" id="blinking3"></div>
+                <br />
+                <button onclick="start();" class="btn box-blink-btn">按我方塊會閃爍</button>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr />
+            <div class="videoBox">
+                <video id="video" src="./images/test.mp4" autoplay controls></video>
+                <div>
+                    <button onclick="playVideo();" class="btn">Play</button>
+                    <button onclick="pauseVideo();" class="btn">Pause</button>
+                    <button onclick="replayVideo();" class="btn">Replay</button>
+                    <span id="counting-timer"></span>
+                </div>
+            </div>
+        </article>
+        <aside></aside>
+    </main>
+    <footer>
+        <div class="footer-text">
+            非常感謝您看完我的網站<br />
+            如果有任何事情歡迎聯絡我<br />
+            我的E-mail：au222cc@gmail.com<br />
+        </div>
+        <a href="#top" class="btn back-to-top">Top</a>
+    </footer>
+
+
+
+
+</body>
+
+<!--JS-->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    //播放影片相關
+    var video;
+    window.onload = function () {
+        video = document.getElementById("video");
+        video.addEventListener("timeupdate", updateTimer);
+        video.addEventListener("ended", function () {
+            alert("Ended");
+        });
+        //nav timer
+        //realTime()
+    }
+
+    function updateTimer() {
+        var timer = document.getElementById("counting-timer");
+        timer.innerHTML = "影片進度：" + video.currentTime + "/" + video.duration;
+    }
+
+    function playVideo() {
+        video.play();
+    }
+
+    function pauseVideo() {
+        video.pause();
+    }
+
+    function replayVideo() {
+        video.currentTime = 0;
+        video.play();
+    }
+    //啟動閃爍
+    function start() {
+        var blinking1 = document.getElementById("blinking1");
+        blinking1.classList.add("effect");
+        var blinking2 = document.getElementById("blinking2");
+        blinking2.classList.add("effect");
+        var blinking3 = document.getElementById("blinking3");
+        blinking3.classList.add("effect");
+    }
+    //nav動態固定在最上面
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 220) {
+                $('.dropDowns').addClass('navFixed');
+            } else {
+                $('.dropDowns').removeClass('navFixed');
+            }
+        });
+    });
+
+    //現在時間
+    function realTime() {
+        var now = new Date();
+        document.getElementById("timer").innerHTML = ("現在時間：" + now.getHours()).toString() + ":" + now.getMinutes().toString() +
+            ":" + now.getSeconds().toString();
+        window.setInterval("realTime()", 1000);
+    }
+</script>
+
+</html>
