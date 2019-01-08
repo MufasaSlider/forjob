@@ -1,7 +1,7 @@
 //-----------------------onload要執行的程式
 window.onload = function () {
     //realTime();   
-    autoShowSlides();
+    //autoShowSlides();
 }
 
 
@@ -77,5 +77,14 @@ function autoShowSlides() {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    setTimeout(autoShowSlides, 3000);
+    setTimeout(autoShowSlides, 4000);
+}
+//-----------------------RWD
+function myFunction() {
+    var x = document.getElementById("myTopNav");
+    if (x.className === "menu") {
+        x.className += " responsive";
+    } else {
+        x.className = "menu";
+    }
 }
