@@ -26,7 +26,7 @@
 	<nav class="dropDowns">
 		<div class="module-left"><a href="https://thegreata.github.io/forjob/">My Github</a></div>
 		<div class="module-right">
-			<ul class="menu">
+			<ul class="menu" id="myTopNav">
 				<li class="has-dropDown">其他功能展示
 					<ul>
 						<li><a>canvas繪圖</a></li>
@@ -39,6 +39,9 @@
 				<li><a href="https://thegreata.github.io/forjob/自我介紹.htm">履歷與自傳</a></li>
 				<li><a>聯絡我</a></li>
 				<li id="timer"></li>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<i class="fa fa-bars"></i>
+				</a>
 			</ul>
 		</div>
 	</nav>
@@ -57,28 +60,28 @@
 	</header>
 	<main>
 		<article>
-			<br/><br/>
+			<br /><br />
 			<!--slideshow練習-->
 			<div class="slideshow-container">
 				<div class="mySlides fade">
 					<div class="number-text">1 / 3</div>
 					<img src="./images/slideshow1.jpg" style="width:100%">
-					<div class="text">Caption Text</div>
+					<div class="text">Steve Adams</div>
 				</div>
 				<div class="mySlides fade">
 					<div class="number-text">2 / 3</div>
 					<img src="./images/slideshow2.jpg" style="width:100%">
-					<div class="text">Caption Two</div>
+					<div class="text">LeBron James</div>
 				</div>
 
 				<div class="mySlides fade">
 					<div class="number-text">3 / 3</div>
 					<img src="./images/slideshow3.jpg" style="width:100%">
-					<div class="text">Caption Three</div>
+					<div class="text">Damian Lillard</div>
 				</div>
 				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 				<a class="next" onclick="plusSlides(1)">&#10095;</a>
-				
+
 			</div>
 			<br>
 			<div style="text-align:center">
