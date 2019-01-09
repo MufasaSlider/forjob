@@ -88,3 +88,20 @@ function myFunction() {
         x.className = "menu";
     }
 }
+//-------------------googleMap
+
+function initMap() {
+    var myHomeLocation = {
+        lat: 25.06289,
+        lng: 121.50208
+    };
+    var map = new google.maps.Map(
+        document.getElementById('googleMap'), {
+            zoom: 4,
+            center: myHomeLocation
+        });
+    var marker = new google.maps.Marker({
+        position: myHomeLocation,
+        map: map
+    });
+}
