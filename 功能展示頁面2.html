@@ -102,10 +102,11 @@
         }
 
         /*-----------------SVG-------------*/
-        .svg-h1{
+        .svg-h1 {
             position: relative;
             margin: 50px;
         }
+
         .svg-div {
             width: 100%;
             height: 700px;
@@ -213,157 +214,162 @@
 
 
 
-</body>
+    <!--JS-->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        //播放影片相關
+        var video;
 
-<!--JS-->
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
-    //播放影片相關
-    var video;
+        function videoPlay() {
+            video = document.getElementById("video");
+            video.addEventListener("timeupdate", updateTimer);
+            video.addEventListener("ended", function () {
+                alert("Ended");
+            });
 
-    function videoPlay() {
-        video = document.getElementById("video");
-        video.addEventListener("timeupdate", updateTimer);
-        video.addEventListener("ended", function () {
-            alert("Ended");
+        }
+
+        function updateTimer() {
+            var timer = document.getElementById("counting-timer");
+            timer.innerHTML = "影片進度：" + video.currentTime + "/" + video.duration;
+        }
+
+        function playVideo() {
+            video.play();
+        }
+
+        function pauseVideo() {
+            video.pause();
+        }
+
+        function replayVideo() {
+            video.currentTime = 0;
+            video.play();
+        }
+        //啟動閃爍
+        function start() {
+            var blinking1 = document.getElementById("blinking1");
+            blinking1.classList.add("effect");
+            var blinking2 = document.getElementById("blinking2");
+            blinking2.classList.add("effect");
+            var blinking3 = document.getElementById("blinking3");
+            blinking3.classList.add("effect");
+        }
+        //nav動態固定在最上面
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 220) {
+                    $('.dropDowns').addClass('navFixed');
+                } else {
+                    $('.dropDowns').removeClass('navFixed');
+                }
+            });
         });
 
-    }
-
-    function updateTimer() {
-        var timer = document.getElementById("counting-timer");
-        timer.innerHTML = "影片進度：" + video.currentTime + "/" + video.duration;
-    }
-
-    function playVideo() {
-        video.play();
-    }
-
-    function pauseVideo() {
-        video.pause();
-    }
-
-    function replayVideo() {
-        video.currentTime = 0;
-        video.play();
-    }
-    //啟動閃爍
-    function start() {
-        var blinking1 = document.getElementById("blinking1");
-        blinking1.classList.add("effect");
-        var blinking2 = document.getElementById("blinking2");
-        blinking2.classList.add("effect");
-        var blinking3 = document.getElementById("blinking3");
-        blinking3.classList.add("effect");
-    }
-    //nav動態固定在最上面
-    $(function () {
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 220) {
-                $('.dropDowns').addClass('navFixed');
+        //現在時間
+        function realTime() {
+            var now = new Date();
+            document.getElementById("timer").innerHTML = ("現在時間：" + now.getHours()).toString() + ":" + now.getMinutes()
+                .toString() +
+                ":" + now.getSeconds().toString();
+            window.setInterval("realTime()", 1000);
+        }
+        //-----------------------RWD
+        function myFunction() {
+            var x = document.getElementById("myTopNav");
+            if (x.className === "menu") {
+                x.className += " responsive";
             } else {
-                $('.dropDowns').removeClass('navFixed');
+                x.className = "menu";
             }
-        });
-    });
-
-    //現在時間
-    function realTime() {
-        var now = new Date();
-        document.getElementById("timer").innerHTML = ("現在時間：" + now.getHours()).toString() + ":" + now.getMinutes().toString() +
-            ":" + now.getSeconds().toString();
-        window.setInterval("realTime()", 1000);
-    }
-    //-----------------------RWD
-    function myFunction() {
-        var x = document.getElementById("myTopNav");
-        if (x.className === "menu") {
-            x.className += " responsive";
-        } else {
-            x.className = "menu";
         }
-    }
-    //---------------------SVG畫板
-    var svg;
+        //---------------------SVG畫板
+        var svg;
 
-    function svgLineFunction() {
-        svg = document.getElementById("svg");
-        svg.addEventListener("mousedown", mousedownSvgLine);
-        svg.removeEventListener("mousedown",mousedownSvgRect);
-    }
-    function svgRectFunction() {
-        svg = document.getElementById("svg");
-        svg.addEventListener("mousedown", mousedownSvgRect);
-        svg.removeEventListener("mousedown",mousedownSvgLine);
-    }
-
-    function mousedownSvgLine(event) {
-        var x = event.clientX;
-        var y = event.clientY;
-        var bounding = this.getBoundingClientRect();
-        x = x - bounding.left;
-        y = y - bounding.top;
-        var line = createSvgElement("line", {
-            "x1": x,
-            "y1": y,
-            "x2": x,
-            "y2": y,
-            "stroke": "red",
-            "stroke-width": 2
-        })
-
-        this.appendChild(line);
-
-
-
-        var drag = function (event) {
-            line.setAttribute("x2", event.clientX - bounding.left);
-            line.setAttribute("y2", event.clientY - bounding.top);
-        }
-        var drop = function () {
-            document.removeEventListener("mousemove", drag);
-            document.removeEventListener("mouseup", drop);
+        function svgLineFunction() {
+            svg = document.getElementById("svg");
+            svg.addEventListener("mousedown", mousedownSvgLine);
+            svg.removeEventListener("mousedown", mousedownSvgRect);
         }
 
-        document.addEventListener("mousemove", drag);
-        document.addEventListener("mouseup", drop);
-
-    }
-
-
-
-    function mousedownSvgRect(event) {
-        var x = event.clientX;
-        var y = event.clientY;
-        var bounding = this.getBoundingClientRect();
-        x = x - bounding.left;
-        y = y - bounding.top;
-
-        var rect = createSvgElement("rect", {
-            "x": x,
-            "y": y,
-            "width": 100,
-            "height": 100,
-            "fill": "orange"
-        })
-        this.appendChild(rect);
-    }
-
-
-
-    function createSvgElement(tagName, attrs) {
-        var element = document.createElementNS("http://www.w3.org/2000/svg", tagName);
-        for (var name in attrs) {
-            element.setAttribute(name, attrs[name]);
+        function svgRectFunction() {
+            svg = document.getElementById("svg");
+            svg.addEventListener("mousedown", mousedownSvgRect);
+            svg.removeEventListener("mousedown", mousedownSvgLine);
         }
-        return element;
-    }
 
-    //---------------onload
-    window.onload = function () {
-        videoPlay();
-        //realTime();
-    }
-</script>
+        function mousedownSvgLine(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            var bounding = this.getBoundingClientRect();
+            x = x - bounding.left;
+            y = y - bounding.top;
+            var line = createSvgElement("line", {
+                "x1": x,
+                "y1": y,
+                "x2": x,
+                "y2": y,
+                "stroke": "red",
+                "stroke-width": 2
+            })
+
+            this.appendChild(line);
+
+
+
+            var drag = function (event) {
+                line.setAttribute("x2", event.clientX - bounding.left);
+                line.setAttribute("y2", event.clientY - bounding.top);
+            }
+            var drop = function () {
+                document.removeEventListener("mousemove", drag);
+                document.removeEventListener("mouseup", drop);
+            }
+
+            document.addEventListener("mousemove", drag);
+            document.addEventListener("mouseup", drop);
+
+        }
+
+
+
+        function mousedownSvgRect(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            var bounding = this.getBoundingClientRect();
+            x = x - bounding.left;
+            y = y - bounding.top;
+
+            var rect = createSvgElement("rect", {
+                "x": x,
+                "y": y,
+                "width": 100,
+                "height": 100,
+                "fill": "orange"
+            })
+            this.appendChild(rect);
+        }
+
+
+
+        function createSvgElement(tagName, attrs) {
+            var element = document.createElementNS("http://www.w3.org/2000/svg", tagName);
+            for (var name in attrs) {
+                element.setAttribute(name, attrs[name]);
+            }
+            return element;
+        }
+
+        //---------------onload
+        window.onload = function () {
+            videoPlay();
+            //realTime();
+        }
+    </script>
+
+
+
+
+</body>
 
 </html>
