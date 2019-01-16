@@ -57,6 +57,11 @@
     top: 0;
 }
 
+.dot-div{
+    text-align: center;
+    position: relative;
+    margin: 1em;
+}
 .dot {
     cursor: pointer;
     height: 15px;
@@ -98,4 +103,21 @@
     to {
         opacity: 1
     }
+}
+/*---------------googleMap nightMarket------------------*/
+.googleMap{
+    width: 100%;
+    height: 500px;
+}
+
+.nightMarket{
+    width: 90%;
+    height: 600px;
+    margin: 100px auto 0px auto;
+}
+.nightMarket-select{
+    display: inline-block;
+}
+.nightMarket-checkbox{
+    
 }
