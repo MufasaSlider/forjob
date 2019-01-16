@@ -1,6 +1,7 @@
 //-----------------------onload要執行的程式
 window.onload = function () {
     //realTime();   
+    alert("網站目前還在製作中喔～～～");
 }
 
 
