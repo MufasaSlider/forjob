@@ -6,6 +6,11 @@ body {
     font-family: "Microsoft JhengHei", "微軟正黑體", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #666;
 }
+.container{
+    position: relative;
+    margin-bottom: 50px;
+    text-align: center;
+}
 
 /*-------------------nav----------------*/
 nav {
@@ -268,12 +273,14 @@ main {
 h1 {
     display: block;
     font-size: 2em;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
+    margin-top: 2em;
+    margin-bottom: 1.67em;
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
     text-align: center;
+    position: relative;
+
 }
 @media screen and (max-width: 800px) {
     h1{
