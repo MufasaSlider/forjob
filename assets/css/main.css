@@ -241,9 +241,7 @@ header {
 }
 
 /*-------------------other----------------*/
-main {
-    height: 3000px;
-}
+
 
 .mark-ajax {
     margin-top: 200px;
@@ -269,6 +267,10 @@ main {
     -moz-transition: all 1s ease;
 
 }
+.row{
+    position: relative;
+    z-index: 3;
+}
 
 h1 {
     display: block;
@@ -282,6 +284,24 @@ h1 {
     position: relative;
 
 }
+h2 {
+    display: block;
+    font-size: 1.8em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+h3 { 
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
 @media screen and (max-width: 800px) {
     h1{
         font-size: 1.5em;
