@@ -96,18 +96,129 @@
 					<div class="nightMarket">
 						<div class="nightMarket-select">
 							<form class="nightMarket-checkbox">
-								<div class="nightMarket-checkbox-title">選擇縣市</div>
+								<h3>選擇縣市</h3>
 								<input type="checkbox" name="place1" value="taipei"> 台北市<br>
 								<input type="checkbox" name="place2" value="newTaipei"> 新北市<br>
 								<input type="checkbox" name="place3" value="Hsinchu"> 新竹市<br>
-								<input type="checkbox" name="place4" value="Taichung" checked> 台中市<br><br>
+								<input type="checkbox" name="place4" value="Taichung"> 台中市<br><br>
 								<input type="submit" value="Submit">
 							</form>
+							<div class="nightMarket-searchName">
+								<h3>依夜市名稱搜尋</h3>
+								<div class="nightMarketName">
+									<input name="nightMarketName" type="text" placeholder="請輸入夜市名稱關鍵字">
+									<button type="submit">查詢</button>
+								</div>
+							</div>
+							<form class="nightMarket-selectAddress">
+								<h3>依夜市地址</h3>
+								<select id="nightMarket-county" onchange="changeLocation(this.selectedIndex)"></select>
+								<br>
+								<select id="nightMarket-place"></select>
+							</form>
+						</div>
+						<div class="nightMarket-item">
+							<hr>
+							<div class="nightMarket-item-box">
+								<div>
+									<h2>士林夜市</h2>
+									<p>地址： 111台北市士林區基河路101號</p>
+									<p>電話：(02)2881-5557</p>
+									<p>商家數量： 1F：226個攤位; B1：94個攤位</p>
+									<p>開放時間： 星期一 16:00–00:00</p>
+									<p>開幕日期： 1909年</p>
+								</div>
+								<div class="nightMarket-pic">
+									<img src="./images/ShiLin.jpg">
+								</div>
+							</div>
+							<hr>
+							<div class="nightMarket-item-box">
+								<div>
+									<h2>饒河街觀光夜市</h2>
+									<p>地址： 105台北市松山區饒河街</p>
+									<p>電話：(02)2763-5733</p>
+									<p>開放時間： 星期一 16:00–00:00</p>
+									<p>開幕日期： 1987年</p>
+									<p>饒河：滿語意為「禽獸眾多之地」</p>
+								</div>
+								<div class="nightMarket-pic">
+									<img src="./images/ShiLin.jpg">
+								</div>
+							</div>
+							<hr>
+							<div class="nightMarket-item-box">
+								<div>
+									<h2>三和夜市</h2>
+									<p>地址： 241新北市三重區中央北路</p>
+									<p>電話：無</p>
+									<p>總長度：約800公尺</p>
+									<p>開放時間： 星期一 16:00–00:00</p>
+									<p>早上為傳統市場中央市場，晚上則是三和夜市</p>
+								</div>
+								<div class="nightMarket-pic">
+									<img src="./images/ShiLin.jpg">
+								</div>
+							</div>
+							<hr>
+							<div class="nightMarket-item-box">
+								<div>
+									<h2>樂華夜市</h2>
+									<p>地址： 234新北市永和區永平路</p>
+									<p>電話： 02 2232 9711</p>
+									<p>開放時間： 星期一 16:00–01:00</p>
+									<p>地點：捷運頂溪站附近</p>
+								</div>
+								<div class="nightMarket-pic">
+									<img src="./images/ShiLin.jpg">
+								</div>
+							</div>
+							<hr>
+							<div class="nightMarket-item-box">
+								<div>
+									<h2>一中商圈</h2>
+									<p>地址： 404台中市北區一中街</p>
+									<p>電話：無</p>
+									<p>開放時間： 星期一 11:00–22:10</p>
+									<p>開幕日期： 1980年代</p>
+									<p>2006年據國立中興大學調查，獲選為台中市最受歡迎的商圈</p>
+								</div>
+								<div class="nightMarket-pic">
+									<img src="./images/ShiLin.jpg">
+								</div>
+							</div>
+							<hr>
+							<div class="nightMarket-item-box">
+								<div>
+									<h2>逢甲夜市</h2>
+									<p>地址：407台中市西屯區文華路</p>
+									<p>電話：(04)2451-5940</p>
+									<p>開放時間： 星期一 16:00–02:00</p>
+									<p>遠見雜誌「全台夜市遊逛」調查中，獲得臺灣最喜愛的夜市</p>
+									<p>觀光局「2010年特色夜市選拔活動」中，取得「台灣最美味夜市」頭銜</p>
+								</div>
+								<div class="nightMarket-pic">
+									<img src="./images/ShiLin.jpg">
+								</div>
+							</div>
+							<hr>
+							<div class="nightMarket-item-box">
+								<div>
+									<h2>花園夜市</h2>
+									<p>地址：704台南市北區海安路三段533號</p>
+									<p>電話：(06)358-3867</p>
+									<p>開放時間： 星期一 17:00–00:00</p>
+									<p>商家數量： 近400個攤位</p>
+									<p>曾於2013年榮登Facebook全球熱門打卡地點第12名</p>
+								</div>
+								<div class="nightMarket-pic">
+									<img src="./images/ShiLin.jpg">
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<hr />
 
 
 
@@ -130,9 +241,10 @@
 
 	<!--JS-->
 	<script src="assets/js/jquery-3.3.1.min.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_qVV70jzO2XltP0Swl4dtbayydjVec5c&callback=initMap"></script>
+
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/index.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_qVV70jzO2XltP0Swl4dtbayydjVec5c&callback=initMap"></script>
 
 </body>
 
