@@ -1,5 +1,5 @@
 //-----------------------onload要執行的程式
-window.onload = function () { 
+window.onload = function () {
     //autoShowSlides();
 }
 
@@ -75,26 +75,48 @@ function initMap() {
 
 //---------------selectLocation
 
-var countyList=['縣市','台北市','新北市','台中市','台南市'];
-var countyElement=document.getElementById("nightMarket-county");
-var countyInner="";
-for(var i=0;i<countyList.length;i++){
-    countyInner=countyInner+'<option value=i>'+countyList[i]+'</option>';
+var countyList = ['縣市', '台北市', '新北市', '台中市', '台南市'];
+var countyElement = document.getElementById("nightMarket-county");
+var countyInner = "";
+for (var i = 0; i < countyList.length; i++) {
+    countyInner = countyInner + '<option value=i>' + countyList[i] + '</option>';
 }
-countyElement.innerHTML=countyInner;
+countyElement.innerHTML = countyInner;
 
-var sectors= new Array();
-sectors[0]=['請先選擇縣市'];
-sectors[1]=['士林夜市','饒河夜市'];
-sectors[2]=['三和夜市','樂華夜市'];
-sectors[3]=['一中商圈','逢甲夜市'];
-sectors[4]=['花園夜市'];
+var sectors = new Array();
+sectors[0] = ['請先選擇縣市'];
+sectors[1] = ['士林夜市', '饒河夜市'];
+sectors[2] = ['三和夜市', '樂華夜市'];
+sectors[3] = ['一中商圈', '逢甲夜市'];
+sectors[4] = ['花園夜市'];
+
 function changeLocation(index) {
-    var location="";
+    var location = "";
     for (var i = 0; i < sectors[index].length; i++) {
-        location=location+'<option value=i>'+sectors[index][i]+'</option>';
+        location = location + '<option value=i>' + sectors[index][i] + '</option>';
     }
-    var locationElement=document.getElementById("nightMarket-place");
-    locationElement.innerHTML=location;
+    var locationElement = document.getElementById("nightMarket-place");
+    locationElement.innerHTML = location;
 }
 changeLocation(document.getElementById("nightMarket-county").selectedIndex);
+
+//----------------search location
+var searchStyle = document.getElementById('search_style');
+document.getElementById('search').addEventListener('input', function () {
+    if (!this.value) {
+        searchStyle.innerHTML = "";
+        return;
+    }
+    searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
+});
+//------------------checkboxSubmit
+function checkboxSubmit(){
+    var boxChecked = document.getElementsByName('checkboxPlace');
+    var searchStyle = document.getElementById('search_style');
+    for (let i = 0; i < boxChecked.length; i++) {
+        if (!boxChecked[i].checked) {
+            searchStyle.innerHTML="{display: none;}";
+        } 
+    }
+    
+}
