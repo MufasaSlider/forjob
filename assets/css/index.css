@@ -146,9 +146,12 @@ main {
     display: flex;
 }
 .nightMarket-pic{
-    width: 150px;
-    height: 100px;
+    width: 200px;
+    height: 150px;
     position: relative;
-    left: 20%;
+    left: 10%;
     top: 15%;
+}
+.nightMarket-text{
+    width: 320px;
 }
