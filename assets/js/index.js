@@ -1,6 +1,7 @@
 //-----------------------onload要執行的程式
 window.onload = function () {
     //autoShowSlides();
+
 }
 
 //-----------------------------slideshow
@@ -75,7 +76,7 @@ function initMap() {
 
 //---------------selectLocation
 
-var countyList = ['縣市', '台北市', '新北市', '台中市', '台南市'];
+var countyList = ['請先選擇縣市', '台北市', '新北市', '台中市', '台南市'];
 var countyElement = document.getElementById("nightMarket-county");
 var countyInner = "";
 for (var i = 0; i < countyList.length; i++) {
@@ -84,25 +85,64 @@ for (var i = 0; i < countyList.length; i++) {
 countyElement.innerHTML = countyInner;
 
 var sectors = new Array();
+var tempCounty=0;
 sectors[0] = ['請先選擇縣市'];
-sectors[1] = ['士林夜市', '饒河夜市'];
-sectors[2] = ['三和夜市', '樂華夜市'];
-sectors[3] = ['一中商圈', '逢甲夜市'];
-sectors[4] = ['花園夜市'];
+sectors[1] = ['請選擇夜市', '士林夜市', '饒河夜市'];
+sectors[2] = ['請選擇夜市', '三和夜市', '樂華夜市'];
+sectors[3] = ['請選擇夜市', '一中商圈', '逢甲夜市'];
+sectors[4] = ['請選擇夜市', '花園夜市'];
 
 function changeLocation(index) {
+    var placeDisplay = new Array;
+    placeDisplay[0] = document.getElementsByName('taipei');
+    placeDisplay[1] = document.getElementsByName('newTaipei');
+    placeDisplay[2] = document.getElementsByName('taichung');
+    placeDisplay[3] = document.getElementsByName('tainan');
+    for (let i = 0; i < placeDisplay.length; i++) {
+        for (let j = 0; j < placeDisplay[i].length; j++) {
+            placeDisplay[i][j].style.display = "";
+        }
+    }
+
+    var searchStyle = document.getElementById('search_style');
     var location = "";
     for (var i = 0; i < sectors[index].length; i++) {
         location = location + '<option value=i>' + sectors[index][i] + '</option>';
+        searchStyle.innerHTML = ".searchable:not([data-index*=\"" + sectors[index][i] + "\"]):not([data-index*=\"" + sectors[index][i - 1] + "\"]) { display: none; }";
     }
+
+    tempCounty=index;
+
+    if (sectors[index] == '請先選擇縣市') {
+        searchStyle.innerHTML = "";
+        return;
+    }
+
     var locationElement = document.getElementById("nightMarket-place");
     locationElement.innerHTML = location;
 }
 changeLocation(document.getElementById("nightMarket-county").selectedIndex);
 
+function changeNightMarket(index) {
+    var searchStyle = document.getElementById('search_style');
+    searchStyle.innerHTML = ".searchable:not([data-index*=\"" + sectors[tempCounty][index] + "\"]) { display: none; }";
+
+}
+
+
 //----------------search location
 var searchStyle = document.getElementById('search_style');
 document.getElementById('search').addEventListener('input', function () {
+    var placeDisplay = new Array;
+    placeDisplay[0] = document.getElementsByName('taipei');
+    placeDisplay[1] = document.getElementsByName('newTaipei');
+    placeDisplay[2] = document.getElementsByName('taichung');
+    placeDisplay[3] = document.getElementsByName('tainan');
+    for (let i = 0; i < placeDisplay.length; i++) {
+        for (let j = 0; j < placeDisplay[i].length; j++) {
+            placeDisplay[i][j].style.display = "";
+        }
+    }
     if (!this.value) {
         searchStyle.innerHTML = "";
         return;
@@ -110,13 +150,24 @@ document.getElementById('search').addEventListener('input', function () {
     searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
 });
 //------------------checkboxSubmit
-function checkboxSubmit(){
+function checkboxSubmit() {
     var boxChecked = document.getElementsByName('checkboxPlace');
-    var searchStyle = document.getElementById('search_style');
+    var placeDisplay = new Array;
+    placeDisplay[0] = document.getElementsByName('taipei');
+    placeDisplay[1] = document.getElementsByName('newTaipei');
+    placeDisplay[2] = document.getElementsByName('taichung');
+    placeDisplay[3] = document.getElementsByName('tainan');
+    for (let i = 0; i < placeDisplay.length; i++) {
+        for (let j = 0; j < placeDisplay[i].length; j++) {
+            placeDisplay[i][j].style.display = "";
+        }
+    }
+
     for (let i = 0; i < boxChecked.length; i++) {
         if (!boxChecked[i].checked) {
-            searchStyle.innerHTML="{display: none;}";
-        } 
+            for (let j = 0; j < placeDisplay[i].length; j++) {
+                placeDisplay[i][j].style.display = "none";
+            }
+        }
     }
-    
 }
