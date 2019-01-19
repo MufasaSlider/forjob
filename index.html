@@ -107,7 +107,7 @@
 								<h3>依夜市名稱搜尋</h3>
 								<div class="nightMarketName">
 									<input name="nightMarketName" type="text" placeholder="請輸入夜市名稱關鍵字" id="search">
-									<button type="submit">查詢</button>
+
 								</div>
 							</div>
 							<style id="search_style"></style>
@@ -115,111 +115,133 @@
 								<h3>依夜市地址</h3>
 								<select id="nightMarket-county" onchange="changeLocation(this.selectedIndex)"></select>
 								<br>
-								<select id="nightMarket-place"></select>
+								<select id="nightMarket-place" onchange="changeNightMarket(this.selectedIndex)"></select>
 							</form>
 						</div>
 						<div class="nightMarket-item">
-							<hr>
-							<div class="nightMarket-item-box searchable" name="taipei1" data-index="士林夜市111台北市士林區基河路101號(02)2881-55571F：226個攤位; B1：94個攤位16:00–00:001909年">
-								<div class="nightMarket-text">
-									<h2>士林夜市</h2>
-									<p>地址： 111台北市士林區基河路101號</p>
-									<p>電話：(02)2881-5557</p>
-									<p>商家數量： 1F：226個攤位; B1：94個攤位</p>
-									<p>開放時間： 16:00–00:00</p>
-									<p>開幕日期： 1909年</p>
+							<div class="searchable" name="taipei" data-index="士林夜市111台北市士林區基河路101號(02)2881-55571F：226個攤位; B1：94個攤位16:00–00:001909年">
+								<hr>
+								<div class="nightMarket-item-box">
+									<div class="nightMarket-text">
+										<h2>士林夜市</h2>
+										<p>地址： 111台北市士林區基河路101號</p>
+										<p>電話：(02)2881-5557</p>
+										<p>商家數量： 1F：226個攤位; B1：94個攤位</p>
+										<p>開放時間： 16:00–00:00</p>
+										<p>開幕日期： 1909年</p>
+									</div>
+									<div>
+										<img src="./images/ShiLin.jpg" class="nightMarket-pic">
+									</div>
 								</div>
-								<div>
-									<img src="./images/ShiLin.jpg" class="nightMarket-pic">
+							</div>
+
+							<div class="searchable" name="taipei" data-index="饒河街觀光夜市105台北市松山區饒河街(02)2763-573316:00–00:001987年滿語意為「禽獸眾多之地」饒河夜市">
+								<hr>
+								<div class="nightMarket-item-box">
+									<div class="nightMarket-text">
+										<h2>饒河街觀光夜市</h2>
+										<p>地址： 105台北市松山區饒河街</p>
+										<p>電話：(02)2763-5733</p>
+										<p>開放時間： 16:00–00:00</p>
+										<p>開幕日期： 1987年</p>
+										<p>饒河：滿語意為「禽獸眾多之地」</p>
+									</div>
+									<div>
+										<img src="./images/饒河夜市.jpg" class="nightMarket-pic">
+									</div>
+								</div>
+							</div>
+
+							<div class="searchable" name="newTaipei" data-index="三和夜市241新北市三重區中央北路無約800公尺16:00–00:00早上為傳統市場中央市場，晚上則是三和夜市">
+								<hr>
+								<div class="nightMarket-item-box">
+									<div class="nightMarket-text">
+										<h2>三和夜市</h2>
+										<p>地址： 241新北市三重區中央北路</p>
+										<p>電話：無</p>
+										<p>總長度：約800公尺</p>
+										<p>開放時間： 16:00–00:00</p>
+										<p>早上為傳統市場中央市場，晚上則是三和夜市</p>
+									</div>
+									<div>
+										<img src="./images/三和夜市.jpg" class="nightMarket-pic">
+									</div>
+								</div>
+							</div>
+
+							<div class="searchable" name="newTaipei" data-index="樂華夜市234新北市永和區永平路(02)2232-971116:00–01:00捷運頂溪站附近">
+								<hr>
+								<div class="nightMarket-item-box">
+									<div class="nightMarket-text">
+										<h2>樂華夜市</h2>
+										<p>地址： 234新北市永和區永平路</p>
+										<p>電話： (02)2232-9711</p>
+										<p>開放時間： 16:00–01:00</p>
+										<p>地點：捷運頂溪站附近</p>
+									</div>
+									<div>
+										<img src="./images/樂華夜市.jpg" class="nightMarket-pic">
+									</div>
+								</div>
+							</div>
+
+							<div class="searchable" name="taichung" data-index="一中商圈404台中市北區一中街無11:00–22:101980年代2006年據國立中興大學調查，獲選為台中市最受歡迎的商圈">
+								<hr>
+								<div class="nightMarket-item-box">
+
+									<div class="nightMarket-text">
+										<h2>一中商圈</h2>
+										<p>地址： 404台中市北區一中街</p>
+										<p>電話：無</p>
+										<p>開放時間： 11:00–22:10</p>
+										<p>開幕日期： 1980年代</p>
+										<p>2006年據國立中興大學調查，獲選為台中市最受歡迎的商圈</p>
+									</div>
+									<div>
+										<img src="./images/一中商圈.jpg" class="nightMarket-pic">
+									</div>
+								</div>
+							</div>
+
+							<div class="searchable" name="taichung" data-index="逢甲夜市407台中市西屯區文華路(04)2451-594016:00–02:00遠見雜誌「全台夜市遊逛」調查中，獲得臺灣最喜愛的夜市觀光局「2010年特色夜市選拔活動」中，取得「台灣最美味夜市」頭銜">
+								<hr>
+								<div class="nightMarket-item-box">
+									<div class="nightMarket-text">
+										<h2>逢甲夜市</h2>
+										<p>地址：407台中市西屯區文華路</p>
+										<p>電話：(04)2451-5940</p>
+										<p>開放時間： 16:00–02:00</p>
+										<p>遠見雜誌「全台夜市遊逛」調查中，獲得臺灣最喜愛的夜市</p>
+										<p>觀光局「2010年特色夜市選拔活動」中，取得「台灣最美味夜市」頭銜</p>
+									</div>
+									<div>
+										<img src="./images/逢甲夜市.jpg" class="nightMarket-pic">
+									</div>
 								</div>
 							</div>
 							<hr>
-							<div class="nightMarket-item-box searchable" name="taipei" data-index="饒河街觀光夜市105台北市松山區饒河街(02)2763-573316:00–00:001987年滿語意為「禽獸眾多之地」">
-								<div class="nightMarket-text">
-									<h2>饒河街觀光夜市</h2>
-									<p>地址： 105台北市松山區饒河街</p>
-									<p>電話：(02)2763-5733</p>
-									<p>開放時間： 16:00–00:00</p>
-									<p>開幕日期： 1987年</p>
-									<p>饒河：滿語意為「禽獸眾多之地」</p>
+							<div class="searchable" name="tainan" data-index="花園夜市704台南市北區海安路三段533號(06)358-386717:00–00:00近400個攤位曾於2013年榮登Facebook全球熱門打卡地點第12名">
+								<div class="nightMarket-item-box">
+
+									<div class="nightMarket-text">
+										<h2>花園夜市</h2>
+										<p>地址：704台南市北區海安路三段533號</p>
+										<p>電話：(06)358-3867</p>
+										<p>開放時間： 17:00–00:00</p>
+										<p>商家數量： 近400個攤位</p>
+										<p>曾於2013年榮登Facebook全球熱門打卡地點第12名</p>
+									</div>
+									<div>
+										<img src="./images/花園夜市.jpg" class="nightMarket-pic">
+									</div>
 								</div>
-								<div>
-									<img src="./images/饒河夜市.jpg"  class="nightMarket-pic">
-								</div>
-							</div>
-							<hr>
-							<div class="nightMarket-item-box searchable" name="newTaipei" data-index="三和夜市241新北市三重區中央北路無約800公尺16:00–00:00早上為傳統市場中央市場，晚上則是三和夜市">
-								<div class="nightMarket-text">
-									<h2>三和夜市</h2>
-									<p>地址： 241新北市三重區中央北路</p>
-									<p>電話：無</p>
-									<p>總長度：約800公尺</p>
-									<p>開放時間： 16:00–00:00</p>
-									<p>早上為傳統市場中央市場，晚上則是三和夜市</p>
-								</div>
-								<div>
-									<img src="./images/三和夜市.jpg" class="nightMarket-pic">
-								</div>
-							</div>
-							<hr>
-							<div class="nightMarket-item-box searchable" name="newTaipei" data-index="樂華夜市234新北市永和區永平路(02)2232-971116:00–01:00捷運頂溪站附近">
-								<div class="nightMarket-text">
-									<h2>樂華夜市</h2>
-									<p>地址： 234新北市永和區永平路</p>
-									<p>電話： (02)2232-9711</p>
-									<p>開放時間： 16:00–01:00</p>
-									<p>地點：捷運頂溪站附近</p>
-								</div>
-								<div>
-									<img src="./images/樂華夜市.jpg" class="nightMarket-pic">
-								</div>
-							</div>
-							<hr>
-							<div class="nightMarket-item-box searchable" name="Taichung" data-index="一中商圈404台中市北區一中街無11:00–22:101980年代2006年據國立中興大學調查，獲選為台中市最受歡迎的商圈">
-								<div class="nightMarket-text">
-									<h2>一中商圈</h2>
-									<p>地址： 404台中市北區一中街</p>
-									<p>電話：無</p>
-									<p>開放時間： 11:00–22:10</p>
-									<p>開幕日期： 1980年代</p>
-									<p>2006年據國立中興大學調查，獲選為台中市最受歡迎的商圈</p>
-								</div>
-								<div class="nightMarket-pic">
-									<img src="./images/ShiLin.jpg">
-								</div>
-							</div>
-							<hr>
-							<div class="nightMarket-item-box searchable" name="Taichung" data-index="逢甲夜市407台中市西屯區文華路(04)2451-594016:00–02:00遠見雜誌「全台夜市遊逛」調查中，獲得臺灣最喜愛的夜市觀光局「2010年特色夜市選拔活動」中，取得「台灣最美味夜市」頭銜">
-								<div class="nightMarket-text">
-									<h2>逢甲夜市</h2>
-									<p>地址：407台中市西屯區文華路</p>
-									<p>電話：(04)2451-5940</p>
-									<p>開放時間： 16:00–02:00</p>
-									<p>遠見雜誌「全台夜市遊逛」調查中，獲得臺灣最喜愛的夜市</p>
-									<p>觀光局「2010年特色夜市選拔活動」中，取得「台灣最美味夜市」頭銜</p>
-								</div>
-								<div class="nightMarket-pic">
-									<img src="./images/ShiLin.jpg">
-								</div>
-							</div>
-							<hr>
-							<div class="nightMarket-item-box searchable" name="Tainan" data-index="花園夜市704台南市北區海安路三段533號(06)358-386717:00–00:00近400個攤位曾於2013年榮登Facebook全球熱門打卡地點第12名">
-								<div class="nightMarket-text">
-									<h2>花園夜市</h2>
-									<p>地址：704台南市北區海安路三段533號</p>
-									<p>電話：(06)358-3867</p>
-									<p>開放時間： 17:00–00:00</p>
-									<p>商家數量： 近400個攤位</p>
-									<p>曾於2013年榮登Facebook全球熱門打卡地點第12名</p>
-								</div>
-								<img src="./images/ShiLin.jpg" class="nightMarket-pic">
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			
+
 
 		</article>
 		<aside></aside>
