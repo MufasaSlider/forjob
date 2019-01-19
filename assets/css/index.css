@@ -127,7 +127,10 @@ main {
     float: left;
 }
 .nightMarket-checkbox{
-
+    margin-bottom: 50px;
+}
+.nightMarket-searchName{
+    margin-bottom: 50px;
 }
 .nightMarket-selectName{
 
@@ -149,7 +152,7 @@ main {
     width: 200px;
     height: 150px;
     position: relative;
-    left: 10%;
+    left: 15%;
     top: 15%;
 }
 .nightMarket-text{
