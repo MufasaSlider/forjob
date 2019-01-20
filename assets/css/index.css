@@ -113,6 +113,7 @@ main {
     height: 500px;
 }
 
+
 .nightMarket{
     width: 90%;
     height: 600px;
@@ -156,5 +157,5 @@ main {
     top: 15%;
 }
 .nightMarket-text{
-    width: 320px;
+    width: 300px;
 }
