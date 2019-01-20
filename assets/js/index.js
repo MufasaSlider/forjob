@@ -1,8 +1,8 @@
 //-----------------------onload要執行的程式
-window.onload = function () {
-    //autoShowSlides();
+window.addEventListener('load', function () {
+    
+});
 
-}
 
 //-----------------------------slideshow
 var slideIndex = 1;
@@ -57,22 +57,38 @@ function autoShowSlides() {
     setTimeout(autoShowSlides, 4000);
 }
 //-------------------googleMap
+var map;
+var nightMarketLocation = new Array
+var marker = new Array;
 
 function initMap() {
-    var myHomeLocation = {
-        lat: 25.06289,
-        lng: 121.50208
-    };
-    var map = new google.maps.Map(
-        document.getElementById('googleMap'), {
-            zoom: 4,
-            center: myHomeLocation
-        });
-    var marker = new google.maps.Marker({
-        position: myHomeLocation,
-        map: map
+    nightMarketLocation[0] = new google.maps.LatLng(25.089485, 121.524203);
+    nightMarketLocation[1] = new google.maps.LatLng(25.050390, 121.573309);
+    nightMarketLocation[2] = new google.maps.LatLng(25.065170, 121.500575);
+    nightMarketLocation[3] = new google.maps.LatLng(25.008707, 121.511706);
+    nightMarketLocation[4] = new google.maps.LatLng(24.150743, 120.685562);
+    nightMarketLocation[5] = new google.maps.LatLng(24.179446, 120.646483);
+    nightMarketLocation[6] = new google.maps.LatLng(23.010640, 120.199605);
+    map = new google.maps.Map(document.getElementById('googleMap'), {
+        center: nightMarketLocation[0],
+        zoom: 7
     });
+    for (let i = 0; i < nightMarketLocation.length; i++) {
+        marker[i] = new google.maps.Marker({
+            position: nightMarketLocation[i],
+            map: map
+        });
+    }
+
+};
+
+function toNightMarketLocation(index) {
+    map.panTo(nightMarketLocation[index]);
+    map.setCenter(nightMarketLocation[index]);
+    map.setZoom(16);
+    
 }
+
 
 //---------------selectLocation
 
@@ -85,7 +101,7 @@ for (var i = 0; i < countyList.length; i++) {
 countyElement.innerHTML = countyInner;
 
 var sectors = new Array();
-var tempCounty=0;
+var tempCounty = 0;
 sectors[0] = ['請先選擇縣市'];
 sectors[1] = ['請選擇夜市', '士林夜市', '饒河夜市'];
 sectors[2] = ['請選擇夜市', '三和夜市', '樂華夜市'];
@@ -111,7 +127,7 @@ function changeLocation(index) {
         searchStyle.innerHTML = ".searchable:not([data-index*=\"" + sectors[index][i] + "\"]):not([data-index*=\"" + sectors[index][i - 1] + "\"]) { display: none; }";
     }
 
-    tempCounty=index;
+    tempCounty = index;
 
     if (sectors[index] == '請先選擇縣市') {
         searchStyle.innerHTML = "";
