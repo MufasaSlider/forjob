@@ -1,8 +1,8 @@
 //-----------------------onload要執行的程式
-window.onload = function () {
+window.addEventListener('load', function (){
     //realTime();   
     alert("網站目前還在製作中喔～～～");
-}
+});
 
 
 //--------------------------nav動態固定在最上面
