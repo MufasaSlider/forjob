@@ -255,8 +255,9 @@ header {
     height: 40px;
     min-width: 150px;
     line-height: 36px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
+    border-radius: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 0;
@@ -266,6 +267,26 @@ header {
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
 
+}
+.btnGray{
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 1px solid #999;
+    padding: 0 26px;
+    height: 40px;
+    min-width: 150px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    color: whitesmoke;
+    background-color: rgb(105, 101, 83);
+    text-align: center;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
 }
 .row{
     position: relative;
