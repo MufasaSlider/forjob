@@ -114,6 +114,7 @@
         .svg-div {
             width: 100%;
             height: 700px;
+            text-align: center;
         }
 
         svg {
@@ -121,10 +122,28 @@
             height: 480px;
             border: 3px solid #000000;
             position: relative;
-            top: 50%;
-            left: 50%;
-            bottom: 30px;
-            margin: 0 0 0 -320px;
+            
+        }
+
+        /*-----------------FileCanvas-----------------*/
+        .file-div {
+            width: 100%;
+            height: 700px;
+            position: relative;
+            text-align: center;
+        }
+
+        #canvas1 {
+            width: 800px;
+            height: 600px;
+            position: relative;
+            align-self: center;
+            margin: 0px auto;
+            border: 1.5px solid #000000;
+        }
+        .loadFile-css{
+            position: relative;
+            text-align: center;
         }
     </style>
 
@@ -140,13 +159,12 @@
             <ul class="menu" id="myTopNav">
                 <li class="has-dropDown">其他功能展示
                     <ul>
-                        <li><a>canvas繪圖</a></li>
-                        <li><a>影像處理</a></li>
-                        <li><a href="./動畫與影片.html">動畫與影片</a></li>
-                        <li><a>ajax+React Component</a></li>
+                        <li><a href="./index.html">功能展示頁面（一）</a></li>
+                        <li><a href="./功能展示頁面2.html">功能展示頁面（二）</a></li>
+                        <li><a>網站製作中</a></li>
                     </ul>
                 </li>
-                <li><a href="https://thegreata.github.io/forjob/自我介紹.htm">履歷與自傳</a></li>
+                <li><a href="https://www.cakeresume.com/austin-lin-91d921">履歷與自傳</a></li>
                 <li><a href="#bottom">聯絡我</a></li>
                 <li id="timer"></li>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -194,12 +212,27 @@
             <hr>
             <div class="svg-div">
                 <h1 class="svg-h1">SVG畫板</h1>
-                <br>
                 <svg id="svg" class="svg"></svg>
+                <div>
                 <button class="btn" id="svg-line" onclick="svgLineFunction()">按我可以在畫板上畫直線</button>
                 <button class="btn" id="svg-rect" onclick="svgRectFunction()">按我可以在畫板上畫方形</button>
+                </div>
             </div>
             <hr>
+            <div class="file-div">
+                <h1>檔案輸入輸出＋濾鏡</h1>
+                <div>
+                    <canvas id="canvas1"></canvas>
+                    <div>
+                        <input class="btnGray loadFile-css" type="file" onchange="loadFile(this)" />
+                        <button class="btnGray" onclick="autoInputFile()">載入預設圖片</button>
+                        <button class="btnGray" onclick="saveFile();">儲存檔案</button>
+                        <a id="download"></a>
+                        <button class="btnGray" onclick="reverseColor();">反轉顏色濾鏡</button>
+                    </div>
+                </div>
+
+            </div>
 
 
         </article>
@@ -220,6 +253,7 @@
 
     <!--JS-->
     <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
     <script type="text/javascript">
         //播放影片相關
         var video;
@@ -363,12 +397,61 @@
             }
             return element;
         }
+        //-------------------影像上傳下載＋濾鏡
+        var canvas1, context;
+
+        function fileCanvas() {
+            canvas1 = document.getElementById("canvas1");
+            context = canvas1.getContext('2d');
+
+        }
+
+        function autoInputFile() {
+            var img = new Image();
+            img.crossOrigin = "";
+            img.src = "./images/CanvasEX.jpg";
+            img.onload = function () {
+                context.drawImage(this, 0, 0, canvas1.width, canvas1.height);
+            }
+        }
+
+        function reverseColor() {
+            var pixels = context.getImageData(0, 0, canvas1.width, canvas1.height);
+            var data = pixels.data;
+            for (let index = 0; index < data.length; index += 4) {
+                data[index] = 255 - data[index];
+                data[index + 1] = 255 - data[index + 1];
+                data[index + 2] = 255 - data[index + 2];
+
+            }
+
+            context.putImageData(pixels, 0, 0);
+
+        }
+
+        function loadFile(input) {
+            var file = input.files[0];
+            var src = URL.createObjectURL(file);
+            var img = new Image();
+            img.src = src;
+            img.onload = function () {
+                context.drawImage(this, 0, 0, canvas1.width, canvas1.height);
+            }
+        }
+
+        function saveFile() {
+            var link = document.getElementById("download");
+            link.download = "image.jpg";
+            link.href = canvas1.toDataURL("image/jpeg");
+            link.click();
+        }
 
         //---------------onload
-        window.onload = function () {
+        window.addEventListener('load', function () {
+            //realTime();   
             videoPlay();
-            //realTime();
-        }
+            fileCanvas();
+        });
     </script>
 
 
