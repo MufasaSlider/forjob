@@ -167,6 +167,8 @@ document.getElementById('search').addEventListener('input', function () {
 });
 //------------------checkboxSubmit
 function checkboxSubmit() {
+    var searchStyle = document.getElementById('search_style');
+    searchStyle.innerHTML = "";
     var boxChecked = document.getElementsByName('checkboxPlace');
     var placeDisplay = new Array;
     placeDisplay[0] = document.getElementsByName('taipei');
