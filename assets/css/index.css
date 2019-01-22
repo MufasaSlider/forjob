@@ -11,7 +11,36 @@ main {
     position: relative;
     margin: auto;
 }
-
+.slideshow-img1{
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%;
+    overflow: hidden;
+    background: url("../../images/JamesHarden.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+.slideshow-img2{
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%;
+    overflow: hidden;
+    background: url("../../images/LebronJames.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+.slideshow-img3{
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%;
+    overflow: hidden;
+    background: url("../../images/steven-adams.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
 .mySlides {
     display: none;
 }
@@ -26,7 +55,7 @@ main {
     padding: 16px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 34px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -44,18 +73,18 @@ main {
 
 .text {
     color: #f2f2f2;
-    font-size: 15px;
+    font-size: 36px;
     padding: 8px 12px;
     position: absolute;
-    bottom: 8px;
+    bottom: 20px;
     width: 100%;
-    text-align: center;
+    text-align: right;
 }
 
 .number-text {
     color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
+    font-size: 28px;
+    padding: 16px 18px;
     position: absolute;
     top: 0;
 }
