@@ -1,6 +1,6 @@
 //-----------------------onload要執行的程式
 window.addEventListener('load', function () {
-    
+    //autoShowSlides();
 });
 
 
@@ -54,7 +54,7 @@ function autoShowSlides() {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    setTimeout(autoShowSlides, 4000);
+    setTimeout(autoShowSlides, 2500);
 }
 //-------------------googleMap
 var map;
