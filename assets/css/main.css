@@ -9,7 +9,10 @@ body {
 .container{
     position: relative;
     margin-bottom: 50px;
-    text-align: center;
+}
+ol{
+    list-style-type: decimal;
+    list-style-position: inside;
 }
 
 /*-------------------nav----------------*/
@@ -19,9 +22,8 @@ nav {
     max-height: 55px;
     line-height: 53px;
     border-bottom: 1px solid #ccc;
-    background-color: white;
+    background-color: rgb(242, 242, 242, 0.92);
     position: absolute;
-    opacity: 0.92;
 }
 
 .navFixed {
@@ -201,7 +203,7 @@ header {
 }
 
 .banner-head {
-    background: url("../../images/台南玩大頭貼.jpg") -40px -40px no-repeat;
+    background: url("../../images/IMG_0984.jpg") -20px -20px no-repeat;
     background-size: 220px auto;
     height: 180px;
     width: 180px;
