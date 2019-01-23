@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+    <meta name="description" content="Practice">
+    <meta name="author" content="Austin Lin">
+    <title>立翔der測試網站</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+
+    <style>
+        main {
+            height: 3350px;
+        }
+
+        /*------------------Ajax-----------------------*/
+        .ajax {
+            width: 70%;
+            height: 600px;
+            margin-bottom: 50px;
+            position: relative;
+            left: 15%;
+        }
+
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination li {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .pagination li.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination li:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        .movie-box{
+            border: 1px solid #ddd;
+            width: 100%;
+            height: 400px;
+            position: relative;
+            top: -9px;
+            
+        }
+        .movie-showBox{
+            position: relative;
+            width: 65%;
+            height: 100%;
+            background-color: bisque;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .movie-ol{
+            position: relative;
+            width: 34.2%;
+            height: 100%;
+            vertical-align: top;
+            line-height: 30px;
+            text-align: left;
+            display: inline-block;
+        }
+        .movie-ol>div{
+            border-bottom: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            font-size: 1.3em;
+            height: 60px;
+        }
+        .movie-ol span{
+            vertical-align: middle;
+            align-content: center;
+        }
+        .movie-ol>div:last-child{
+            border-bottom: none;
+        }
+        .num{
+            width: 10%;
+            height: 66px;
+            text-align: center;
+            color: #000000;
+            background: #ececec;
+            padding: 15px;
+            border-top: 1px solid #fff;
+            display: table-cell;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <nav class="dropDowns">
+        <div class="module-left"><a href="https://github.com/TheGreatA/forjob">My Github</a></div>
+        <div class="module-right">
+            <ul class="menu" id="myTopNav">
+                <li class="has-dropDown">其他功能展示
+                    <ul>
+                        <li><a href="./index.html">功能展示頁面（一）</a></li>
+                        <li><a href="./功能展示頁面2.html">功能展示頁面（二）</a></li>
+                        <li><a href="./功能展示頁面3.html">功能展示頁面（三）</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.cakeresume.com/austin-lin-91d921">履歷與自傳</a></li>
+                <li><a href="mailto:au222cc@gmail.com" target="_blank" rel="nofollow noopener noreferer">聯絡我</a></li>
+                <li id="timer"></li>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div name="top"></div>
+        <div class="banner-div">
+            <div class="banner-head"></div>
+            <div>
+                您好我是立翔<br />
+                <span>
+                    這個頁面可以用手機觀看<br />
+                    目前在尋找前端工程師的工作<br />
+                    歡迎聯繫我～～～
+                </span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <article>
+            <div class="ajax">
+                <h1>Ajax</h1>
+                <div>
+                    <ul class="pagination">
+                        <li onclick="getData('受歡迎電影.html')">本週新片</li>
+                        <li onclick="getData()">上映中</li>
+                        <li onclick="getData()">2018電影排行榜</li>
+                    </ul>
+                    <div class="movie-box" id="ajaxChange">
+                        <div class="movie-showBox">
+
+                        </div>
+                        <ul class="movie-ol">
+                            <div>
+                                <div class="num">1</div>
+                                <span>MovieName</span>
+                            </div>
+                            <div>
+                                <div class="num">1</div>
+                                <span>MovieName</span>
+                            </div>
+                            <div>
+                                <div class="num">1</div>
+                                <span>MovieName</span>
+                            </div>
+                            <div>
+                                <div class="num">1</div>
+                                <span>MovieName</span>
+                            </div>
+                            <div>
+                                <div class="num">1</div>
+                                <span>MovieName</span>
+                            </div>
+                            <div>
+                                <div class="num">...</div>
+                                <span>更多影片</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </article>
+        <aside></aside>
+    </main>
+    <footer>
+        <div class="footer-text" name="bottom" id="bottom">
+            非常感謝您看完我的網站<br />
+            如果有任何事情歡迎聯絡我<br />
+            我的E-mail：au222cc@gmail.com<br />
+            手機：0970081229<br />
+        </div>
+        <a href="#top" class="btn back-to-top">Top</a>
+    </footer>
+
+
+
+
+
+    <!--JS-->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+        //--------------ajax電影-----------
+        function getData(params) {
+            var ajaxMovie = new XMLHttpRequest();
+            ajaxMovie.open("get", "http://127.0.0.1:8887/" + params);
+            ajaxMovie.onload = function () {
+                var ajaxChange = document.getElementById("ajaxChange");
+                ajaxChange.innerHTML = this.responseText;
+            }
+            ajaxMovie.send();
+        }
+    </script>
+
+
+
+</body>
+
+
+
+</html>
