@@ -22,9 +22,9 @@
             height: 3350px;
         }
 
-        /*------------------Ajax-----------------------*/
+        /*------------------Ajax + promise-----------------------*/
         .ajax {
-            width: 70%;
+            width: 1000px;
             height: 600px;
             margin-bottom: 50px;
             position: relative;
@@ -62,48 +62,6 @@
             position: relative;
             top: -9px;
             
-        }
-        .movie-showBox{
-            position: relative;
-            width: 65%;
-            height: 100%;
-            background-color: bisque;
-            display: inline-block;
-            vertical-align: top;
-        }
-        .movie-ol{
-            position: relative;
-            width: 34.2%;
-            height: 100%;
-            vertical-align: top;
-            line-height: 30px;
-            text-align: left;
-            display: inline-block;
-        }
-        .movie-ol>div{
-            border-bottom: 1px solid #ddd;
-            border-left: 1px solid #ddd;
-            font-size: 1.3em;
-            height: 60px;
-        }
-        .movie-ol span{
-            vertical-align: middle;
-            align-content: center;
-        }
-        .movie-ol>div:last-child{
-            border-bottom: none;
-        }
-        .num{
-            width: 10%;
-            height: 66px;
-            text-align: center;
-            color: #000000;
-            background: #ececec;
-            padding: 15px;
-            border-top: 1px solid #fff;
-            display: table-cell;
-            vertical-align: middle;
-            display: inline-block;
         }
         
     </style>
@@ -151,43 +109,15 @@
     <main>
         <article>
             <div class="ajax">
-                <h1>Ajax</h1>
+                <h1>Ajax+Promise</h1>
                 <div>
                     <ul class="pagination">
-                        <li onclick="getData('受歡迎電影.html')">本週新片</li>
+                        <li onclick="getData('./本週新片.html')">本週新片</li>
                         <li onclick="getData()">上映中</li>
                         <li onclick="getData()">2018電影排行榜</li>
                     </ul>
                     <div class="movie-box" id="ajaxChange">
-                        <div class="movie-showBox">
 
-                        </div>
-                        <ul class="movie-ol">
-                            <div>
-                                <div class="num">1</div>
-                                <span>MovieName</span>
-                            </div>
-                            <div>
-                                <div class="num">1</div>
-                                <span>MovieName</span>
-                            </div>
-                            <div>
-                                <div class="num">1</div>
-                                <span>MovieName</span>
-                            </div>
-                            <div>
-                                <div class="num">1</div>
-                                <span>MovieName</span>
-                            </div>
-                            <div>
-                                <div class="num">1</div>
-                                <span>MovieName</span>
-                            </div>
-                            <div>
-                                <div class="num">...</div>
-                                <span>更多影片</span>
-                            </div>
-                        </ul>
                     </div>
                 </div>
 
@@ -219,15 +149,37 @@
     <script src="assets/js/main.js"></script>
     <script type="text/javascript">
         //--------------ajax電影-----------
+
+        var ajaxChange = document.getElementById("ajaxChange");
+
         function getData(params) {
-            var ajaxMovie = new XMLHttpRequest();
-            ajaxMovie.open("get", "http://127.0.0.1:8887/" + params);
-            ajaxMovie.onload = function () {
-                var ajaxChange = document.getElementById("ajaxChange");
-                ajaxChange.innerHTML = this.responseText;
-            }
-            ajaxMovie.send();
+            return new Promise(function (resolve, reject) {
+                var ajaxMovie = new XMLHttpRequest();
+                ajaxMovie.open("get", "http://127.0.0.1:8887/" + params);
+                ajaxMovie.onload = function () {
+                    resolve(this.responseText);
+
+                }
+                ajaxMovie.onerror = function () {
+                    reject("取得資料失敗");
+                }
+                ajaxMovie.send();
+            })
+
         }
+
+        function getDataThen(params) {
+            getData(params).then(function (result) {
+                ajaxChange.innerHTML = result;
+            }, function (error) {
+                alert(error);
+            });
+        }
+
+        //----------------------onload
+        window.addEventListener('load', function () {
+            getDataThen('./本週新片.html');
+        });
     </script>
 
 
