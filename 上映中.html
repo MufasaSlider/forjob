@@ -1,0 +1,254 @@
+<style>
+    /*---------------------------ajax電影---------------*/
+    .movie-showBox {
+        position: relative;
+        width: 75.3%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        background-color: #ececec;
+    }
+
+    .movie-img {
+        width: 40%;
+        height: 100%;
+        display: inline-block;
+        background: url("./images/寒單.jpg") no-repeat;
+        background-size: 100% auto;
+        z-index: 2;
+    }
+
+    .new-img1 {
+        background: url("./images/我的爸爸是壞蛋冠軍.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .new-img2 {
+        background: url("./images/鬼故事.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .new-img3 {
+        background: url("./images/企鵝公路.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .new-img4 {
+        background: url("./images/搖滾男孩狂想曲.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .new-img5 {
+        background: url("./images/鎖命危機.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .movie-intro {
+        width: 50%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        color: #000000;
+    }
+
+
+    .movie-ol {
+        position: relative;
+        width: 24.2%;
+        height: 100%;
+        vertical-align: top;
+        line-height: 35px;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .movie-ol>div {
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        font-size: 1.3em;
+        width: 100%;
+    }
+
+    .movie-ol span {
+        vertical-align: middle;
+        align-content: center;
+        margin-left: 2%;
+    }
+
+    .movie-ol>div:last-child {
+        border-bottom: none;
+    }
+
+    .num {
+        width: 10%;
+        text-align: center;
+        color: #000000;
+        background: #ececec;
+        padding: 15px;
+        border-top: 1px solid #fff;
+        display: table-cell;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .linkDecoration:not(.active) {
+        text-decoration: none;
+        color: #434eae;
+    }
+
+    .movie-ol>div:hover:not(.active) {
+        background: #434eae;
+    }
+
+    .movie-ol>div:hover>span {
+        color: #fff;
+    }
+
+    .active {
+        background-color: #434eae;
+    }
+
+    .moviePage.active>span {
+        color: #fff;
+    }
+
+    .movie-ol>div:hover>span>a {
+        color: #fff;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .movie-showBox {
+            width: 100%;
+        }
+
+        .movie-ol {
+            width: 100%;
+        }
+
+        .movie-ol {
+            line-height: 15px;
+        }
+    }
+</style>
+<div class="movie-showBox" id="movie1">
+    <div class="movie-img new-img1"></div>
+    <div class="movie-intro">
+        <h2>我的爸爸是壞蛋冠軍</h2>
+        <h3>My Dad is a Heel Wrestler</h3>
+        <div>
+            上映日期：2019-01-18<br>
+            片　　長：01時52分<br>
+            發行公司：天馬行空<br>
+            導演：<br>
+            藤村享平(Kyohei Fujimura)<br>
+            演員：<br>
+            棚橋弘至(Hiroshi Tanahashi) 、 木村佳乃(Kimura Yoshino) 、 寺田心(Kokoro Terada) 、 仲里依紗 、 大泉洋(Yo Oizumi) 、 大谷亮平 、 寺脇康文
+            官方連結：<br>
+            <a href="https://www.facebook.com/skydigi">https://www.facebook.com/skydigi</a><br>
+            <a href="http://www.skydigient.com/">http://www.skydigient.com/</a>
+        </div>
+    </div>
+</div>
+<div class="movie-showBox" id="movie1">
+    <div class="
+        movie-img new-img2"></div>
+    <div class="movie-intro">
+        <h2>鬼故事</h2>
+        <h3>Ghost Stories</h3>
+        <div>
+            上映日期：2019-01-18<br>
+            片　　長：01時38分<br>
+            發行公司：暗光鳥電影院<br>
+            IMDb分數：6.4<br>
+            導演：<br>
+            傑瑞米戴森(Jeremy Dyson) 、 安迪尼曼(Andy Nyman)<br>
+            演員：<br>
+            馬丁費里曼(Martin Freeman) 、 安迪尼曼(Andy Nyman)<br>
+            官方連結：<br>
+            <a href="https://www.facebook.com/afterdark.tw/">https://www.facebook.com/afterdark.tw/</a><br>
+            <a href="http://afterdark.theater/">http://afterdark.theater/</a>
+        </div>
+    </div>
+</div>
+<div class="movie-showBox" id="movie1">
+    <div class="movie-img new-img3"></div>
+    <div class="movie-intro">
+        <h2>企鵝公路</h2>
+        <h3>Penguin Highway</h3>
+        <div>
+            上映日期：2019-01-18<br>
+            片　　長：01時58分<br>
+            發行公司：木棉花<br>
+            IMDb分數：6.8<br>
+            導演：<br>
+            石田祐康(Ishida Hiroyasu)<br>
+            演員：<br>
+            官方連結：<br>
+            <a href="https://www.e-muse.com.tw/property/penguin_highway/">https://www.e-muse.com.tw/property/penguin_highway/</a>
+        </div>
+    </div>
+</div>
+<div class="movie-showBox" id="movie1">
+    <div class="
+    movie-img new-img4"></div>
+    <div class="movie-intro">
+        <h2>搖滾男孩狂想曲</h2>
+        <h3>A Moon Of My Own</h3>
+        <div>
+            上映日期：2019-01-18<br>
+            片　　長：02時00分<br>
+            發行公司：本萃電影<br>
+            IMDb分數：7.2<br>
+            導演：<br>
+            漢斯霍姆(Hannes Holm)<br>
+            演員：<br>
+            亞當帕森(Adam Pålsson) 、 漢娜阿爾斯特倫(Hanna Alström)<br>
+            官方連結：<br>
+            <a href="https://www.facebook.com/benchmark.films.tw/">https://www.facebook.com/benchmark.films.tw/</a>
+        </div>
+    </div>
+</div>
+<div class="movie-showBox" id="movie1">
+    <div class="
+movie-img new-img5"></div>
+    <div class="movie-intro">
+        <h2>鎖命危機</h2>
+        <h3>Door Lock</h3>
+        <div>
+            上映日期：2019-01-18<br>
+            片　　長：01時43分<br>
+            發行公司：采昌國際多媒體<br>
+            IMDb分數：6.0<br>
+            導演：<br>
+            李權(LEE Kwon)<br>
+            演員：<br>
+            孔曉振(GONG Hyo-Jin) 、 金叡園 、 金盛吳 、 趙福萊 、 李家燮 <br>
+        </div>
+    </div>
+</div>
+<ul class="movie-ol">
+    <div class="moviePage" onclick="moviePagination(0)">
+        <div class="num">1</div>
+        <span class="linkDecoration">我的爸爸是壞蛋冠軍</span>
+    </div>
+    <div class="moviePage" onclick="moviePagination(1)">
+        <div class="num">2</div>
+        <span class="linkDecoration">鬼故事</span>
+    </div>
+    <div class="moviePage" onclick="moviePagination(2)">
+        <div class="num">3</div>
+        <span class="linkDecoration">企鵝公路</span>
+    </div>
+    <div class="moviePage" onclick="moviePagination(3)">
+        <div class="num">4</div>
+        <span class="linkDecoration">搖滾男孩狂想曲</span>
+    </div>
+    <div class="moviePage" onclick="moviePagination(4)">
+        <div class="num">5</div>
+        <span class="linkDecoration">鎖命危機</span>
+    </div>
+    <div class="moviePage" onclick="window.open('https://movies.yahoo.com.tw/movie_intheaters.html')">
+        <div class="num">...</div>
+        <span class="linkDecoration">更多影片</span>
+    </div>
+</ul>
