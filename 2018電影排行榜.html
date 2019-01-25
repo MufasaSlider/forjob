@@ -1,0 +1,250 @@
+<style>
+    /*---------------------------ajax電影---------------*/
+    .movie-showBox {
+        position: relative;
+        width: 75.3%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        background-color: #ececec;
+    }
+
+    .movie-img {
+        width: 40%;
+        height: 100%;
+        display: inline-block;
+        background: url("./images/潛艦獵殺令.jpg") no-repeat;
+        background-size: 100% auto;
+        z-index: 2;
+    }
+
+    .new-img1 {
+        background: url("./images/雨妳再次相遇.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .new-img2 {
+        background: url("./images/殺死巨人的女孩.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .new-img3 {
+        background: url("./images/電影哆啦A夢：大雄的金銀島.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+    .new-img4 {
+        background: url("./images/疾風魅影-黑貓中隊.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+    .new-img5 {
+        background: url("./images/復仇者聯盟：無限之戰.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    .movie-intro {
+        width: 50%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        color: #000000;
+    }
+
+
+    .movie-ol {
+        position: relative;
+        width: 24.2%;
+        height: 100%;
+        vertical-align: top;
+        line-height: 35px;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .movie-ol>div {
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        font-size: 1.3em;
+        width: 100%;
+    }
+
+    .movie-ol span {
+        vertical-align: middle;
+        align-content: center;
+        margin-left: 2%;
+    }
+
+    .movie-ol>div:last-child {
+        border-bottom: none;
+    }
+
+    .num {
+        width: 10%;
+        text-align: center;
+        color: #000000;
+        background: #ececec;
+        padding: 15px;
+        border-top: 1px solid #fff;
+        display: table-cell;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .linkDecoration:not(.active) {
+        text-decoration: none;
+        color: #434eae;
+    }
+
+    .movie-ol>div:hover:not(.active) {
+        background: #434eae;
+    }
+
+    .movie-ol>div:hover>span {
+        color: #fff;
+    }
+
+    .active {
+        background-color: #434eae;
+    }
+
+    .moviePage.active>span {
+        color: #fff;
+    }
+    
+    .movie-ol>div:hover>span>a {
+        color: #fff;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .movie-showBox{
+            width: 100%;
+        }
+        .movie-ol{
+            width: 100%;
+        }
+        .movie-ol {
+            line-height: 15px;
+        }
+    }
+
+
+</style>
+<div class="movie-showBox" id="movie1">
+    <div class="movie-img new-img1"></div>
+    <div class="movie-intro">
+        <h2>潛艦獵殺令</h2>
+        <h3>Hunter Killer</h3>
+        <div>
+                上映日期：2018-10-26<br>
+                片　　長：02時02分<br>
+                發行公司：龍祥<br>
+                IMDb分數：7.0<br>
+                導演：<br>
+                唐納文馬歇(Donovan Marsh)<br>
+                演員：<br>
+                蓋瑞歐德曼(Gary Oldman) 、 傑瑞德巴特勒(Gerard Butler) 、 凡夫俗子(Common)<br>
+                官方連結：<br>
+                <a href="https://www.facebook.com/lsmovie">https://www.facebook.com/lsmovie</a>
+        </div>
+    </div>
+</div>
+<div class="movie-showBox" id="movie1">
+    <div class="
+        movie-img new-img2"></div>
+    <div class="movie-intro">
+        <h2>雨妳再次相遇</h2>
+        <h3>Be With You</h3>
+        <div>
+                上映日期：2018-04-04<br>
+                片　　長：02時13分<br>
+                發行公司：車庫娛樂<br>
+                導演：<br>
+                演員：<br>
+                蘇志燮 、 孫藝珍(Son Ye-Jin)<br>
+                官方連結：<br>
+                <a href="http://facebook.com/garageplay.tw">http://facebook.com/garageplay.tw</a><br>
+                <a href="http://garageplay.tw">http://garageplay.tw</a>
+        </div>
+    </div>
+</div>
+<div class="movie-showBox" id="movie1">
+    <div class="movie-img new-img3"></div>
+    <div class="movie-intro">
+        <h2>電影哆啦A夢：大雄的金銀島</h2>
+        <h3>Doraemon the Movie 2018 Nobita's Treasure Island</h3>
+        <div>
+                上映日期：2018-06-29<br>
+                片　　長：01時48分<br>
+                發行公司：鴻基國際視訊、蜜蜂工房<br>
+                IMDb分數：7.4<br>
+                導演：<br>
+                今井一曉<br>
+                
+                官方連結：<br>
+                <a href="https://www.facebook.com/beesfactory">https://www.facebook.com/beesfactory</a>
+        </div>
+    </div>
+</div>
+<div class="movie-showBox" id="movie1">
+    <div class="
+    movie-img new-img4"></div>
+    <div class="movie-intro">
+        <h2>疾風魅影-黑貓中隊</h2>
+        <h3>Lost Black Cats 35TH Squadron</h3>
+        <div>
+                上映日期：2018-10-26<br>
+                片　　長：01時32分<br>
+                發行公司：華映娛樂<br>
+                導演：<br>
+                楊佈新<br>
+                演員：<br>
+                官方連結：<br>
+                <a href="https://www.facebook.com/35thsquadron/">https://www.facebook.com/35thsquadron/</a>
+        </div>
+    </div>
+</div>
+<div class="movie-showBox" id="movie1">
+    <div class="
+movie-img new-img5"></div>
+    <div class="movie-intro">
+        <h2>復仇者聯盟：無限之戰</h2>
+        <h3>Avengers: Infinity War</h3>
+        <div>
+                上映日期：2018-04-25<br>
+                片　　長：02時30分<br>
+                發行公司：漫威影業<br>
+                IMDb分數：8.8<br>
+                導演：<br>
+                安東尼魯索(Anthony Russo) 、 喬羅素(Joe Russo)<br>
+                演員：<br>
+                Robert Downey Jr.(Iron Man)、Chris Evans(Captain America)、Mark Ruffalo(Hulk)<br>
+                官方連結：<br>
+                <a href="https://www.facebook.com/MarvelStudioTaiwan/">https://www.facebook.com/MarvelStudioTaiwan/</a>
+        </div>
+    </div>
+</div>
+<ul class="movie-ol">
+    <div class="moviePage" onclick="moviePagination(0)">
+        <div class="num">1</div>
+        <span class="linkDecoration">潛艦獵殺令</span>
+    </div>
+    <div class="moviePage" onclick="moviePagination(1)">
+        <div class="num">2</div>
+        <span class="linkDecoration">雨妳再次相遇</span>
+    </div>
+    <div class="moviePage" onclick="moviePagination(2)">
+        <div class="num">3</div>
+        <span class="linkDecoration">電影哆啦A夢：大雄的金銀島</span>
+    </div>
+    <div class="moviePage" onclick="moviePagination(3)">
+        <div class="num">4</div>
+        <span class="linkDecoration">疾風魅影-黑貓中隊</span>
+    </div>
+    <div class="moviePage" onclick="moviePagination(4)">
+        <div class="num">5</div>
+        <span class="linkDecoration">復仇者聯盟：無限之戰</span>
+    </div>
+    <div class="moviePage" onclick="window.open('https://movies.yahoo.com.tw/chart.html?cate=rating&search_year=2018')">
+        <div class="num">...</div>
+        <span class="linkDecoration">更多影片</span>
+    </div>
+</ul>
