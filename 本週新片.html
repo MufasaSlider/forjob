@@ -1,4 +1,5 @@
 <style>
+    /*---------------------------ajax電影---------------*/
     .movie-showBox {
         position: relative;
         width: 75.3%;
@@ -29,6 +30,14 @@
 
     .new-img3 {
         background: url("./images/驚濤佈局.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+    .new-img4 {
+        background: url("./images/真寵.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+    .new-img5 {
+        background: url("./images/三角草的春天.JPG") no-repeat;
         background-size: 100% auto;
     }
 
@@ -80,20 +89,46 @@
         display: inline-block;
     }
 
-    .linkDecoration{
+    .linkDecoration:not(.active) {
         text-decoration: none;
         color: #434eae;
     }
 
-    .movie-ol>div:hover{
+    .movie-ol>div:hover:not(.active) {
         background: #434eae;
     }
-    .movie-ol>div:hover>span{
+
+    .movie-ol>div:hover>span {
         color: #fff;
     }
 
+    .active {
+        background-color: #434eae;
+    }
+
+    .moviePage.active>span {
+        color: #fff;
+    }
+    
+    .movie-ol>div:hover>span>a {
+        color: #fff;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .movie-showBox{
+            width: 100%;
+        }
+        .movie-ol{
+            width: 100%;
+        }
+        .movie-ol {
+            line-height: 15px;
+        }
+    }
+
+
 </style>
-<div class="movie-showBox" id="movie1" style="display:none;">
+<div class="movie-showBox" id="movie1">
     <div class="movie-img new-img1"></div>
     <div class="movie-intro">
         <h2>寒單</h2>
@@ -111,7 +146,7 @@
         </div>
     </div>
 </div>
-<div class="movie-showBox" id="movie1" style="display:none;">
+<div class="movie-showBox" id="movie1">
     <div class="
         movie-img new-img2"></div>
     <div class="movie-intro">
@@ -145,75 +180,72 @@
             史蒂芬奈特(Steven Knight) <br>
             演員： <br>
             安海瑟威(Anne Hathaway) 、 馬修麥康納(Matthew McConaughey) 、 黛安蓮恩(Diane Lane) 、 傑瑞米史壯(Jeremy
-            Strong) 、 傑森克拉克(Jason Clarke) 、 吉蒙翰蘇(Djimon Hounsou) 、 羅伯特哈柏斯(Robert Hobbs)
+            Strong) 、 傑森克拉克(Jason Clarke) 
         </div>
     </div>
 </div>
-<div class="movie-showBox" id="movie1" style="display:none;">
+<div class="movie-showBox" id="movie1">
     <div class="
-    movie-img new-img2"></div>
+    movie-img new-img4"></div>
     <div class="movie-intro">
-        <h2>殺死巨人的女孩</h2>
-        <h3>I Kill Giants</h3>
+        <h2>真寵</h2>
+        <h3>The Favorite</h3>
         <div>
             上映日期：2019-01-25 <br>
-            片　　長：01時47分 <br>
-            發行公司：車庫娛樂 <br>
-            IMDb分數：6.2 <br>
-            導演： <br>
-            安德斯華特(Anders Walter) <br>
-            演員： <br>
-            麥迪遜沃爾夫(Madison Wolfe) 、 柔伊莎達娜(Zoe Saldana) 、 愛莫根波茲(Imogen Poots) <br>
-            官方連結： <br>
-            <a href="http://garageplay.tw/">http://garageplay.tw/</a><br>
-            <a href="https://www.facebook.com/garageplay.tw">https://www.facebook.com/garageplay.tw</a>
+            片　　長：02時00分<br>
+            發行公司：福斯<br>
+            IMDb分數：7.9<br>
+            導演：<br>
+            尤格藍西莫(Yorgos Lanthimos)<br>
+            演員：<br>
+            艾瑪史東(Emma Stone) 、 瑞秋懷茲(Rachel Weisz) 、 奧莉薇亞柯爾曼(Olivia Colman) 、 尼可拉斯霍特(Nicholas Hoult) 、 喬歐文(Joe Alwyn)
         </div>
     </div>
 </div>
-<div class="movie-showBox" id="movie1" style="display:none;">
+<div class="movie-showBox" id="movie1">
     <div class="
-movie-img new-img2"></div>
+movie-img new-img5"></div>
     <div class="movie-intro">
-        <h2>殺死巨人的女孩</h2>
-        <h3>I Kill Giants</h3>
+        <h2>三角草的春天</h2>
+        <h3>Liver leaf</h3>
         <div>
-            上映日期：2019-01-25 <br>
-            片　　長：01時47分 <br>
-            發行公司：車庫娛樂 <br>Ｆ
-            IMDb分數：6.2 <br>
-            導演： <br>
-            安德斯華特(Anders Walter) <br>
-            演員： <br>
-            麥迪遜沃爾夫(Madison Wolfe) 、 柔伊莎達娜(Zoe Saldana) 、 愛莫根波茲(Imogen Poots) <br>
-            官方連結： <br>
-            <a href="http://garageplay.tw/">http://garageplay.tw/</a><br>
-            <a href="https://www.facebook.com/garageplay.tw">https://www.facebook.com/garageplay.tw</a>
+            上映日期：2019-01-25<br>
+            片　　長：01時55分<br>
+            發行公司：暗光鳥<br>
+            IMDb分數：6.2<br>
+            導演：<br>
+            内藤瑛亮<br>
+            演員：<br>
+            山田杏奈 、 清水尋也 、 大谷凜香<br>
+            官方連結：<br>
+            <a href="http://afterdark.theater/">http://afterdark.theater/</a><br>
+            <a href="https://www.facebook.com/afterdark.tw/">https://www.facebook.com/afterdark.tw/</a><br>
         </div>
     </div>
 </div>
 <ul class="movie-ol">
-    <div>
+    <div class="moviePage" onclick="moviePagination(0)">
         <div class="num">1</div>
         <span class="linkDecoration">寒單</span>
     </div>
-    <div>
+    <div class="moviePage" onclick="moviePagination(1)">
         <div class="num">2</div>
         <span class="linkDecoration">殺死巨人的女孩</span>
     </div>
-    <div>
+    <div class="moviePage" onclick="moviePagination(2)">
         <div class="num">3</div>
         <span class="linkDecoration">驚濤佈局</span>
     </div>
-    <div>
+    <div class="moviePage" onclick="moviePagination(3)">
         <div class="num">4</div>
-        <span class="linkDecoration">MovieName</span>
+        <span class="linkDecoration">真寵</span>
     </div>
-    <div>
+    <div class="moviePage" onclick="moviePagination(4)">
         <div class="num">5</div>
-        <span class="linkDecoration">MovieName</span>
+        <span class="linkDecoration">三角草的春天</span>
     </div>
-    <div>
+    <div class="moviePage" onclick="window.open('https://movies.yahoo.com.tw/movie_thisweek.html')">
         <div class="num">...</div>
-        <span><a href="https://movies.yahoo.com.tw/movie_thisweek.html" class="linkDecoration">更多影片</a></span>
+        <span class="linkDecoration">更多影片</span>
     </div>
 </ul>
