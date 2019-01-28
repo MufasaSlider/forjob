@@ -15,6 +15,14 @@ ol{
     list-style-position: inside;
 }
 
+.web-intro{
+    position: relative;
+    font-size: 1.2em;
+    line-height: 2em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
 /*-------------------nav----------------*/
 nav {
     width: 100%;
@@ -71,45 +79,52 @@ nav {
 
 .menu>li {
     height: 55px;
-    width: 180px;
+    width: 150px;
+    
     display: inline-block;
     position: relative;
     vertical-align: top;
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
     color: #666;
 }
 
 .menu a {
     text-decoration: none;
     color: #666;
+
 }
 
 .menu>li ul {
     font-size: 1em;
     width: inherit;
-    padding: 8px 0;
     border-bottom: 0.5px solid #ccc;
     border-left: 0.5px solid #ccc;
     border-right: 0.5px solid #ccc;
-    background: white;
-    position: absolute;
+    background: rgb(242, 242, 242, 0.92);
+    position: relative;
     z-index: 20;
+    display: none;
     opacity: 0;
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
+    transition: all 0.7s ease;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
 }
 
 .menu>li:hover>ul {
     opacity: 1;
+    display: block;
 }
 
-.menu li:hover {
+.menu>li>ul li:hover {
+    background-color: antiquewhite;
+}
+.menu>li:hover {
     opacity: 1;
     font: bold;
     background-color: antiquewhite;
+    cursor: pointer;
 }
 
 .has-dropDown:after {
@@ -153,24 +168,31 @@ nav {
         top: 0;
     }
 
-    .menu.responsive a {
+    .menu.responsive>a {
         position: relative;
         float: none;
         display: block;
         text-align: center;
-        z-index: 60;
+        z-index: 20;
     }
 
     .menu.responsive>li {
         position: relative;
-        z-index: 990;
-        float: none;
         display: block;
         left: 0px;
         top: 55px;
         width: 100%;
         text-align: center;
-        background-color: white;
+        background-color: rgb(242, 242, 242, 0.92);
+    }
+
+    .toggle-sub>ul,
+    .toggle-sub li ,
+    .toggle-sub a{
+        display: block;
+
+        background-color: #666;
+        color: white;
     }
 
 }
@@ -361,6 +383,7 @@ footer {
 
 .back-to-top:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 /*-----------RWD footer*/
