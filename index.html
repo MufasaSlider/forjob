@@ -9,7 +9,7 @@
 	<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
 	<meta name="description" content="Practice">
 	<meta name="author" content="Austin Lin">
-	<title>立翔der測試網站</title>
+	<title>Focus Lab</title>
 
 	<!--CSS-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="assets/css/index.css" />
 
 	<link rel="icon" type="image/png" href="./images/logo.png" />
-	
+
 
 
 </head>
@@ -29,15 +29,15 @@
 		<div class="module-left"><a href="https://github.com/TheGreatA/forjob">My Github</a></div>
 		<div class="module-right">
 			<ul class="menu" id="myTopNav">
-				<li class="has-dropDown">其他功能展示
-					<ul>
-						<li><a href="./index.html">功能展示頁面（一）</a></li>
-						<li><a href="./功能展示頁面2.html">功能展示頁面（二）</a></li>
-						<li><a href="./功能展示頁面3.html">功能展示頁面（三）</a></li>
+				<li class="has-dropDown" onclick="myRWD()">其他功能展示
+					<ul id="RWDElse" class="">
+						<li onclick="location.href='./index.html'"><a>功能展示頁面（一）</a></li>
+						<li onclick="location.href='./功能展示頁面2.html'"><a>功能展示頁面（二）</a></li>
+						<li onclick="location.href='./功能展示頁面3.html'"><a>功能展示頁面（三）</a></li>
 					</ul>
 				</li>
-				<li><a href="https://www.cakeresume.com/austin-lin-91d921">履歷與自傳</a></li>
-				<li><a href="mailto:au222cc@gmail.com" target="_blank" rel="nofollow noopener noreferer">聯絡我</a></li>
+				<li onclick="location.href='https://www.cakeresume.com/austin-lin-91d921'"><a href="https://www.cakeresume.com/austin-lin-91d921">履歷與自傳</a></li>
+				<li onclick="location.href='mailto:au222cc@gmail.com'" target="_blank" rel="nofollow noopener noreferer";><a href="mailto:au222cc@gmail.com" target="_blank" rel="nofollow noopener noreferer">聯絡我</a></li>
 				<li id="timer"></li>
 				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 					<i class="fa fa-bars"></i>
@@ -52,7 +52,7 @@
 			<div>
 				您好我是立翔<br />
 				<span>
-					這個頁面可以用手機觀看<br />
+					這是我的功能展示頁面（一）<br />
 					目前在尋找前端工程師的工作<br />
 					歡迎聯繫我～～～
 				</span>
@@ -62,7 +62,24 @@
 	<main>
 		<article>
 			<div class="container">
-				<h1>slideshow的功能展示：</h1>
+				<h1>網站導覽簡介：</h1>
+				<div class="web-intro">
+					歡迎來到我製作的網頁！<br />
+					希望能透過這幾個網頁<br />
+					展示我製作網頁上的基本能力<br />
+					所有的網站都能用手機觀看<br />
+					網頁中每一個功能上方都有簡單的介紹<br />
+					也很歡迎觀看我在Github上的製作過程（選單左上角）<br />
+					如果有任何的問題歡迎告訴我～～～<br />
+				</div>
+			</div>
+			<hr>
+			<div class="container">
+				<h1>幻燈片的功能展示：</h1>
+				<div class="web-intro">
+					以下是常見的幻燈片功能<br />
+					除了自動翻頁外，還可以按前後頁或是下方的點來手動翻頁<br />
+				</div>
 				<!--slideshow練習-->
 				<div class="slideshow-container">
 					<div class="mySlides fade">
@@ -74,7 +91,7 @@
 					<div class="mySlides fade">
 						<div class="number-text">2 / 3</div>
 						<div class="slideshow-img2">
-							
+
 						</div>
 						<div class="text">LeBron James</div>
 					</div>
@@ -82,7 +99,7 @@
 					<div class="mySlides fade">
 						<div class="number-text">3 / 3</div>
 						<div class="slideshow-img3">
-					
+
 						</div>
 						<div class="text">Steve Adams</div>
 					</div>
@@ -100,6 +117,11 @@
 			<hr />
 			<div class="container">
 				<h1>Google Map的功能展示：</h1>
+				<div class="web-intro">
+					以下用Google API標記了7個夜市地點<br />
+					有三種方式（複選框, 關鍵字搜尋, 下拉式選單）可以來搜尋已經標記好的7個夜市<br />
+					點擊夜市地點的icon可以放大並移動到所選擇的夜市<br />
+				</div>
 				<div id="googleMap" class="googleMap"></div>
 				<div class="container">
 					<div class="nightMarket">
@@ -109,7 +131,7 @@
 								<input type="checkbox" name="checkboxPlace" value="taipei" checked> 台北市<br>
 								<input type="checkbox" name="checkboxPlace" value="newTaipei" checked> 新北市<br>
 								<input type="checkbox" name="checkboxPlace" value="Taichung" checked> 台中市<br>
-								<input type="checkbox" name="checkboxPlace" value="Tainan" checked> 台南市<br><br>
+								<input type="checkbox" name="checkboxPlace" value="Tainan" checked> 台南市<br>
 								<input type="button" value="Submit" onclick="checkboxSubmit()">
 							</form>
 							<div class="nightMarket-searchName">
@@ -139,7 +161,7 @@
 										<p>開放時間： 16:00–00:00</p>
 										<p>開幕日期： 1909年</p>
 									</div>
-									<i class="fas fa-map-marked-alt fa-3x" onclick="toNightMarketLocation(0)"></i>
+									<i class="fas fa-map-marked-alt fa-3x mapIcon" onclick="toNightMarketLocation(0)"></i>
 									<div>
 										<img src="./images/ShiLin.jpg" class="nightMarket-pic">
 									</div>
@@ -157,7 +179,7 @@
 										<p>開幕日期： 1987年</p>
 										<p>饒河：滿語意為「禽獸眾多之地」</p>
 									</div>
-									<i class="fas fa-map-marked-alt fa-3x" onclick="toNightMarketLocation(1)"></i>
+									<i class="fas fa-map-marked-alt fa-3x mapIcon" onclick="toNightMarketLocation(1)"></i>
 									<div>
 										<img src="./images/饒河夜市.jpg" class="nightMarket-pic">
 									</div>
@@ -175,7 +197,7 @@
 										<p>開放時間： 16:00–00:00</p>
 										<p>早上為傳統市場中央市場，晚上則是三和夜市</p>
 									</div>
-									<i class="fas fa-map-marked-alt fa-3x" onclick="toNightMarketLocation(2)"></i>
+									<i class="fas fa-map-marked-alt fa-3x mapIcon" onclick="toNightMarketLocation(2)"></i>
 									<div>
 										<img src="./images/三和夜市.jpg" class="nightMarket-pic">
 									</div>
@@ -192,7 +214,7 @@
 										<p>開放時間： 16:00–01:00</p>
 										<p>地點：捷運頂溪站附近</p>
 									</div>
-									<i class="fas fa-map-marked-alt fa-3x" onclick="toNightMarketLocation(3)"></i>
+									<i class="fas fa-map-marked-alt fa-3x mapIcon" onclick="toNightMarketLocation(3)"></i>
 									<div>
 										<img src="./images/樂華夜市.jpg" class="nightMarket-pic">
 									</div>
@@ -211,7 +233,7 @@
 										<p>開幕日期： 1980年代</p>
 										<p>2006年據國立中興大學調查，獲選為台中市最受歡迎的商圈</p>
 									</div>
-									<i class="fas fa-map-marked-alt fa-3x" onclick="toNightMarketLocation(4)"></i>
+									<i class="fas fa-map-marked-alt fa-3x mapIcon" onclick="toNightMarketLocation(4)"></i>
 									<div>
 										<img src="./images/一中商圈.jpg" class="nightMarket-pic">
 									</div>
@@ -229,7 +251,7 @@
 										<p>遠見雜誌「全台夜市遊逛」調查中，獲得臺灣最喜愛的夜市</p>
 										<p>觀光局「2010年特色夜市選拔活動」中，取得「台灣最美味夜市」頭銜</p>
 									</div>
-									<i class="fas fa-map-marked-alt fa-3x" onclick="toNightMarketLocation(5)"></i>
+									<i class="fas fa-map-marked-alt fa-3x mapIcon" onclick="toNightMarketLocation(5)"></i>
 									<div>
 										<img src="./images/逢甲夜市.jpg" class="nightMarket-pic">
 									</div>
@@ -247,7 +269,7 @@
 										<p>商家數量： 近400個攤位</p>
 										<p>曾於2013年榮登Facebook全球熱門打卡地點第12名</p>
 									</div>
-									<i class="fas fa-map-marked-alt fa-3x" onclick="toNightMarketLocation(6)"></i>
+									<i class="fas fa-map-marked-alt fa-3x mapIcon" onclick="toNightMarketLocation(6)"></i>
 									<div>
 										<img src="./images/花園夜市.jpg" class="nightMarket-pic">
 									</div>
