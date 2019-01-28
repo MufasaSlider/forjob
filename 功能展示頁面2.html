@@ -9,7 +9,7 @@
     <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
     <meta name="description" content="Practice">
     <meta name="author" content="Austin Lin">
-    <title>立翔der測試網站</title>
+    <title>Focus Lab</title>
 
     <!--CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
@@ -18,13 +18,18 @@
     <link rel="icon" type="image/png" href="./images/logo.png" />
     <style type="text/css">
         main {
-            height: 3000px;
+            height: 3300px;
+        }
+        @media screen and (max-width: 800px) {
+            main {
+            height: 2950px;
+        }
         }
 
         /*這是立體方塊*/
         .box-blink-div {
             width: 100%;
-            height: 550px;
+            height: 620px;
             ;
         }
 
@@ -87,23 +92,39 @@
             }
         }
 
+        @media screen and (max-width: 800px) {
+            .box-blink-btn {
+                left: 13%;
+            }
+        }
+
         /*---------video------------*/
 
         .video-div {
             width: 100%;
             height: 750px;
+            text-align: center;
         }
 
         .video-h1 {
             position: relative;
-            top: 50px;
+            margin-bottom: 50px;
         }
 
         .videoBox {
             position: relative;
-            top: 50%;
-            left: 50%;
-            margin: -300px 0 0 -427px;
+            margin: 0px auto;
+        }
+
+        @media screen and (max-width: 800px) {
+            .videoSize {
+                width: 100%;
+            }
+
+            .video-div {
+                height: 500px;
+
+            }
         }
 
         /*-----------------SVG-------------*/
@@ -114,7 +135,7 @@
 
         .svg-div {
             width: 100%;
-            height: 700px;
+            height: 780px;
             text-align: center;
         }
 
@@ -123,7 +144,13 @@
             height: 480px;
             border: 3px solid #000000;
             position: relative;
-            
+
+        }
+
+        @media screen and (max-width: 800px) {
+            svg {
+                width: 98%;
+            }
         }
 
         /*-----------------FileCanvas-----------------*/
@@ -135,16 +162,22 @@
         }
 
         #canvas1 {
-            width: 800px;
-            height: 600px;
+            
             position: relative;
             align-self: center;
             margin: 0px auto;
             border: 1.5px solid #000000;
         }
-        .loadFile-css{
+
+        .loadFile-css {
             position: relative;
             text-align: center;
+        }
+        @media screen and (max-width: 800px) {
+            svg {
+                width: 100%;
+                height: 400px;
+            }
         }
     </style>
 
@@ -158,11 +191,11 @@
         <div class="module-left"><a href="https://github.com/TheGreatA/forjob">My Github</a></div>
         <div class="module-right">
             <ul class="menu" id="myTopNav">
-                <li class="has-dropDown">其他功能展示
-                    <ul>
-                        <li><a href="./index.html">功能展示頁面（一）</a></li>
-                        <li><a href="./功能展示頁面2.html">功能展示頁面（二）</a></li>
-                        <li><a href="./功能展示頁面3.html">功能展示頁面（三）</a></li>
+                <li class="has-dropDown" onclick="myRWD()">其他功能展示
+                    <ul id="RWDElse" class="">
+                            <li onclick="location.href='./index.html'"><a>功能展示頁面（一）</a></li>
+                            <li onclick="location.href='./功能展示頁面2.html'"><a>功能展示頁面（二）</a></li>
+                            <li onclick="location.href='./功能展示頁面3.html'"><a>功能展示頁面（三）</a></li>
                     </ul>
                 </li>
                 <li><a href="https://www.cakeresume.com/austin-lin-91d921">履歷與自傳</a></li>
@@ -181,7 +214,9 @@
             <div>
                 您好我是立翔<br />
                 <span>
-                    這個頁面可以播放簡單的影片跟動畫
+                    這是我的功能展示頁面（二）<br />
+                    目前在尋找前端工程師的工作<br />
+                    歡迎聯繫我～～～
                 </span>
             </div>
         </div>
@@ -189,19 +224,23 @@
     <main>
         <article>
             <div class="box-blink-div">
-                <h1 class="box-blink-h1">會閃爍的方塊：</h1>
+                <h1 class="box-blink-h1">閃爍方塊：</h1>
+                <div class="web-intro">
+                    這個方塊用了CSS的歪斜+動畫來製作
+                </div>
                 <div class="box-blink">
-                    <div class="top-box" id="blinking1"></div>
-                    <div class="front-box" id="blinking2"></div>
-                    <div class="right-box" id="blinking3"></div><br>
+                    <div class="top-box" id="blinking1"></div><div class="front-box" id="blinking2"></div><div class="right-box" id="blinking3"></div><br>
                     <button onclick="start();" class="btn box-blink-btn">按我方塊會閃爍</button>
                 </div>
             </div>
             <hr />
             <div class="video-div">
-                <h1 class="video-h1">網頁影片播放</h1>
+                <h1 class="video-h1">影片播放</h1>
+                <div class="web-intro">
+                    這個影片用了HTML5的元件還有方法來顯示
+                </div>
                 <div class="videoBox">
-                    <video id="video" src="./images/test.mp4" autoplay controls></video>
+                    <video class="videoSize" id="video" src="./images/test.mp4" autoplay controls></video>
                     <div>
                         <button onclick="playVideo();" class="btn">Play</button>
                         <button onclick="pauseVideo();" class="btn">Pause</button>
@@ -213,23 +252,32 @@
             <hr>
             <div class="svg-div">
                 <h1 class="svg-h1">SVG畫板</h1>
+                <div class="web-intro">
+                    以下畫板能自動偵測滑鼠的位置<br />
+                    而在畫版中畫出指定的SVG圖形<br />
+                </div>
                 <svg id="svg" class="svg"></svg>
                 <div>
-                <button class="btn" id="svg-line" onclick="svgLineFunction()">按我可以在畫板上畫直線</button>
-                <button class="btn" id="svg-rect" onclick="svgRectFunction()">按我可以在畫板上畫方形</button>
+                    <button class="btn" id="svg-line" onclick="svgLineFunction()">按我可以在畫板上畫直線</button>
+                    <button class="btn" id="svg-rect" onclick="svgRectFunction()">按我可以在畫板上畫方形</button>
+                    <button class="btn" onclick="clearSVG()">清除上一個動作</button>
                 </div>
             </div>
             <hr>
             <div class="file-div">
                 <h1>檔案輸入輸出＋濾鏡</h1>
+                <div class="web-intro">
+                    您能夠在下面的canvas畫板中載入圖片<br />
+                    反轉圖片的顏色並下載圖片<br />
+                </div>
                 <div>
                     <canvas id="canvas1"></canvas>
                     <div>
                         <input class="btnGray loadFile-css" type="file" onchange="loadFile(this)" />
                         <button class="btnGray" onclick="autoInputFile()">載入預設圖片</button>
+                        <button class="btnGray" onclick="reverseColor();">反轉顏色濾鏡</button>
                         <button class="btnGray" onclick="saveFile();">儲存檔案</button>
                         <a id="download"></a>
-                        <button class="btnGray" onclick="reverseColor();">反轉顏色濾鏡</button>
                     </div>
                 </div>
 
@@ -270,7 +318,7 @@
 
         function updateTimer() {
             var timer = document.getElementById("counting-timer");
-            timer.innerHTML = "影片進度：" + video.currentTime + "/" + video.duration;
+            timer.innerHTML = "影片進度(秒)：" + parseInt(video.currentTime) + "/" + parseInt(video.duration);
         }
 
         function playVideo() {
@@ -305,14 +353,7 @@
             });
         });
 
-        //現在時間
-        function realTime() {
-            var now = new Date();
-            document.getElementById("timer").innerHTML = ("現在時間：" + now.getHours()).toString() + ":" + now.getMinutes()
-                .toString() +
-                ":" + now.getSeconds().toString();
-            window.setInterval("realTime()", 1000);
-        }
+
         //-----------------------RWD
         function myFunction() {
             var x = document.getElementById("myTopNav");
@@ -389,6 +430,10 @@
             this.appendChild(rect);
         }
 
+        function clearSVG(){
+            svg.removeChild(svg.lastChild);
+        }
+
 
 
         function createSvgElement(tagName, attrs) {
@@ -404,6 +449,16 @@
         function fileCanvas() {
             canvas1 = document.getElementById("canvas1");
             context = canvas1.getContext('2d');
+            if (window.screen.availWidth>800) {
+                canvas1.width=600;
+                canvas1.height=400;
+                 
+                }else{
+                    canvas1.width=window.screen.availWidth;
+                    canvas1.height=400;
+                    
+                }
+            
 
         }
 
@@ -412,6 +467,23 @@
             img.crossOrigin = "";
             img.src = "./images/CanvasEX.jpg";
             img.onload = function () {
+                var MAXWidthHeight;
+                
+                if (window.screen.availWidth>800) {
+                    MAXWidthHeight=600;
+                 
+                }else{
+                    MAXWidthHeight=window.screen.availWidth;
+                 
+                }
+                var ratio=MAXWidthHeight/Math.max(this.width,this.height);
+                w=Math.round(this.width*ratio);
+                h=Math.round(this.height*ratio);
+                canvas1 = document.getElementById("canvas1");
+            context = canvas1.getContext('2d');
+                canvas1.width=w;
+                canvas1.height=h;
+
                 context.drawImage(this, 0, 0, canvas1.width, canvas1.height);
             }
         }
@@ -436,6 +508,24 @@
             var img = new Image();
             img.src = src;
             img.onload = function () {
+                var MAXWidthHeight;
+                
+                if (window.screen.availWidth>800) {
+                    MAXWidthHeight=600;
+                 
+                }else{
+                    MAXWidthHeight=window.screen.availWidth;
+                 
+                }
+                
+                var ratio=MAXWidthHeight/Math.max(this.width,this.height);
+                w=Math.round(this.width*ratio);
+                h=Math.round(this.height*ratio);
+                canvas1 = document.getElementById("canvas1");
+            context = canvas1.getContext('2d');
+                canvas1.width=w;
+                canvas1.height=h;
+
                 context.drawImage(this, 0, 0, canvas1.width, canvas1.height);
             }
         }
@@ -449,7 +539,7 @@
 
         //---------------onload
         window.addEventListener('load', function () {
-            //realTime();   
+              
             videoPlay();
             fileCanvas();
         });
