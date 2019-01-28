@@ -1,7 +1,7 @@
 //-----------------------onload要執行的程式
 window.addEventListener('load', function (){
-    //realTime();   
-    alert("網站目前還在製作中喔～～～");
+    realTime();   
+    //alert("網站目前還在製作中喔～～～");
 });
 
 
@@ -21,9 +21,8 @@ $(function () {
 
 function realTime() {
     var now = new Date();
-    document.getElementById("timer").innerHTML = ("現在時間：" + now.getHours()).toString() + ":" + now.getMinutes().toString() +
-        ":" + now.getSeconds().toString();
-    window.setInterval("realTime()", 1000);
+    document.getElementById("timer").innerHTML = ("現在時間：" + now.getHours()).toString() + "點" + now.getMinutes().toString()+"分";
+    window.setTimeout("realTime()", 60000);
 }
 
 
@@ -35,5 +34,14 @@ function myFunction() {
         x.className += " responsive";
     } else {
         x.className = "menu";
+    }
+    
+}
+function myRWD() {
+    var RWDElse = document.getElementById("RWDElse");
+    if (RWDElse.className === "") {
+        RWDElse.className += "toggle-sub";
+    } else {
+        RWDElse.className = "";
     }
 }
