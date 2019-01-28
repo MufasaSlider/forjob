@@ -1,6 +1,6 @@
 //-----------------------onload要執行的程式
 window.addEventListener('load', function () {
-    //autoShowSlides();
+    autoShowSlides();
 });
 
 
@@ -54,22 +54,41 @@ function autoShowSlides() {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    setTimeout(autoShowSlides, 2500);
+    setTimeout(autoShowSlides, 3500);
 }
 //-------------------googleMap
 var map;
 var nightMarketLocation = new Array
 var marker = new Array;
 
+var tempLat={
+    "0":25.089485,
+    "1":25.050390,
+    "2":25.065170,
+    "3":25.008707,
+    "4":24.150743,
+    "5":24.179446,
+    "6":23.010640,
+};
+var tempLng={
+    "0":121.524203,
+    "1":121.573309,
+    "2":121.500575,
+    "3":121.511706,
+    "4":120.685562,
+    "5":120.646483,
+    "6":120.199605,
+};
+
 function initMap() {
-    nightMarketLocation[0] = new google.maps.LatLng(25.089485, 121.524203);
-    nightMarketLocation[1] = new google.maps.LatLng(25.050390, 121.573309);
-    nightMarketLocation[2] = new google.maps.LatLng(25.065170, 121.500575);
-    nightMarketLocation[3] = new google.maps.LatLng(25.008707, 121.511706);
-    nightMarketLocation[4] = new google.maps.LatLng(24.150743, 120.685562);
-    nightMarketLocation[5] = new google.maps.LatLng(24.179446, 120.646483);
-    nightMarketLocation[6] = new google.maps.LatLng(23.010640, 120.199605);
+    
+    for (let i = 0; i < 7; i++) {
+        nightMarketLocation[i] = new google.maps.LatLng(tempLat[i],tempLng[i]);
+        
+    }
+
     map = new google.maps.Map(document.getElementById('googleMap'), {
+        
         center: nightMarketLocation[0],
         zoom: 7
     });
@@ -86,7 +105,7 @@ function toNightMarketLocation(index) {
     map.panTo(nightMarketLocation[index]);
     map.setCenter(nightMarketLocation[index]);
     map.setZoom(16);
-    
+
 }
 
 
@@ -107,13 +126,20 @@ sectors[1] = ['請選擇夜市', '士林夜市', '饒河夜市'];
 sectors[2] = ['請選擇夜市', '三和夜市', '樂華夜市'];
 sectors[3] = ['請選擇夜市', '一中商圈', '逢甲夜市'];
 sectors[4] = ['請選擇夜市', '花園夜市'];
+var tempPlace={
+    "0":"taipei",
+    "1":"newTaipei",
+    "2":"taichung",
+    "4":"tainan"
+}
+
 
 function changeLocation(index) {
     var placeDisplay = new Array;
-    placeDisplay[0] = document.getElementsByName('taipei');
-    placeDisplay[1] = document.getElementsByName('newTaipei');
-    placeDisplay[2] = document.getElementsByName('taichung');
-    placeDisplay[3] = document.getElementsByName('tainan');
+    for (let i = 0; i < 5; i++) {
+        placeDisplay[i]=document.getElementsByName(tempPlace[i]);
+    }
+    
     for (let i = 0; i < placeDisplay.length; i++) {
         for (let j = 0; j < placeDisplay[i].length; j++) {
             placeDisplay[i][j].style.display = "";
@@ -150,10 +176,9 @@ function changeNightMarket(index) {
 var searchStyle = document.getElementById('search_style');
 document.getElementById('search').addEventListener('input', function () {
     var placeDisplay = new Array;
-    placeDisplay[0] = document.getElementsByName('taipei');
-    placeDisplay[1] = document.getElementsByName('newTaipei');
-    placeDisplay[2] = document.getElementsByName('taichung');
-    placeDisplay[3] = document.getElementsByName('tainan');
+    for (let i = 0; i < 5; i++) {
+        placeDisplay[i]=document.getElementsByName(tempPlace[i]);
+    }
     for (let i = 0; i < placeDisplay.length; i++) {
         for (let j = 0; j < placeDisplay[i].length; j++) {
             placeDisplay[i][j].style.display = "";
@@ -171,10 +196,9 @@ function checkboxSubmit() {
     searchStyle.innerHTML = "";
     var boxChecked = document.getElementsByName('checkboxPlace');
     var placeDisplay = new Array;
-    placeDisplay[0] = document.getElementsByName('taipei');
-    placeDisplay[1] = document.getElementsByName('newTaipei');
-    placeDisplay[2] = document.getElementsByName('taichung');
-    placeDisplay[3] = document.getElementsByName('tainan');
+    for (let i = 0; i < 5; i++) {
+        placeDisplay[i]=document.getElementsByName(tempPlace[i]);
+    }
     for (let i = 0; i < placeDisplay.length; i++) {
         for (let j = 0; j < placeDisplay[i].length; j++) {
             placeDisplay[i][j].style.display = "";
