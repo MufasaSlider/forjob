@@ -189,9 +189,9 @@
                 </div>
                 <div>
                     <ul class="pagination">
-                        <li onclick="getDataThen('本週新片.html')" class="ajaxPage">本週新片</li>
-                        <li onclick="getDataThen('上映中.html')" class="ajaxPage">上映中</li>
-                        <li onclick="getDataThen('2018電影排行榜.html')" class="ajaxPage">2018電影排行榜</li>
+                        <li onclick="getDataThen('./本週新片.html')" class="ajaxPage">本週新片</li>
+                        <li onclick="getDataThen('./上映中.html')" class="ajaxPage">上映中</li>
+                        <li onclick="getDataThen('./2018電影排行榜.html')" class="ajaxPage">2018電影排行榜</li>
                     </ul>
                     <div class="movie-box" id="ajaxChange">
 
@@ -269,9 +269,9 @@
             getData(params).then(function (result) {
                 ajaxChange.innerHTML = result;
 
-                if (params == "本週新片.html") {
+                if (params == "./本週新片.html") {
                     ajaxPagination(0);
-                } else if (params == "上映中.html") {
+                } else if (params == "./上映中.html") {
                     ajaxPagination(1);
                 } else {
                     ajaxPagination(2);
