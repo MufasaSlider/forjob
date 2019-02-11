@@ -1,0 +1,269 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+    <meta name="description" content="Practice">
+    <meta name="author" content="Austin Lin">
+    <title>Focus Lab</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+
+
+    <!--<link rel="icon" type="image/png" href="./images/logo.png" />-->
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Cookie');
+        @import url('https://fonts.googleapis.com/css?family=Lato');
+
+        html {
+            --main-background-color: #E3F2FD;
+            --main-font-color: #263238;
+            --rhea-blue: #039BE5;
+        }
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .App {}
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-size: 75%;
+            background: var(--main-background-color);
+            color: var(--main-font-color);
+            overflow-y: scroll;
+        }
+
+        body::-webkit-scrollbar {
+            width: 4px;
+            height: 1px;
+            transition: all .5s;
+            z-index: 10;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #bec4c8;
+            border-radius: 3px;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .wrapper {
+            max-width: 930px;
+            margin: 0 auto;
+        }
+
+        .Navbar {
+            background: white;
+            padding: 0 20px;
+            border-bottom: 1px solid #E0E0E0;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+            z-index: 1;
+            box-shadow: 1px 1px 4px 2px rgba(100, 100, 100, 0.2);
+        }
+
+        .Navbar nav {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .Title {
+            font-family: 'Cookie', cursive;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .Search {
+            width: 200px;
+            border: 1px solid #E0E0E0;
+            padding: 6px;
+            border-radius: 4px;
+            background: var(--main-background-color);
+            text-align: center;
+        }
+
+        .Search:focus {
+            width: 250px;
+            background: white;
+            outline: none;
+            text-align: left;
+            transition: width 0.2s;
+        }
+
+        .LogInBtn {
+            background: #039BE5;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 3px;
+        }
+
+        .SignUpBtn {
+            background: white;
+            color: #039BE5;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 3px;
+        }
+
+        .InfoHeader {
+            height: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            margin: 100px auto 10px;
+        }
+
+        .InfoHeader img {
+            height: 90%;
+            border-radius: 50%;
+        }
+
+        .InfoHeader span {
+            font-weight: 400;
+        }
+
+        .InfoHeader h2 {
+            padding: 10px 15px;
+        }
+
+        .Pic {
+            height: 280px;
+            width: 280px;
+            margin: 15px;
+        }
+
+        .Pic img {
+            height: 280px;
+            min-width: 350px;
+            width: 280px;
+        }
+
+        .Pic h2 {
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            height: 280px;
+            width: 280px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Pic h2 i {
+            padding: 0 5px;
+        }
+
+        .Pic h2 span {
+            margin: 0 5px;
+        }
+
+        .Pic h2:hover {
+            opacity: 1;
+        }
+
+        .PicGrid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .Modal {
+            background: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 100%;
+        }
+
+        .Modal-content {
+            height: 80vh;
+            width: 80vw;
+            margin: 25% auto;
+            box-shadow: 4px 4px 30px black;
+            background: white;
+            display: flex;
+        }
+
+        .Modal-content img {
+            height: 100%;
+            width: 70%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .Modal-content-details {
+            padding: 20px;
+        }
+
+        .stop-scroll {
+            overflow-y: hidden;
+        }
+
+        .Footer ul {
+            height: 60px;
+            margin: 20px 0;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Footer li {
+            padding: 0 10px;
+            margin: 0 10px;
+        }
+
+        .copyright {
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='root'></div>
+
+
+
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/jsx" src="./FakeInstagram.jsx"></script>
+
+</body>
+
+
+</html>
