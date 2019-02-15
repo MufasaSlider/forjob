@@ -1,0 +1,534 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <title>其他版型網站（一）</title>
+
+    <!--此網站為在“巧禾數位設計”公司遠端面試時給的作業，如有任何不妥的地方歡迎告訴我-->
+
+    <style>
+        @import './assets/css/reset.css';
+
+        nav {
+            background-color: #ffffff;
+            display: flex;
+            border-bottom: 2px solid #f7f7f7;
+        }
+
+        .logo {
+            height: 70px;
+            width: 30%;
+        }
+
+        .logo-pic {
+            background: url("./images/0.png") no-repeat;
+            background-size: cover;
+            width: 90px;
+            height: 50px;
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+
+        .nav-item-box {
+            border-right: 2px solid #f7f7f7;
+            text-align: center;
+            padding: 5px 30px;
+            line-height: 30px;
+            position: relative;
+
+        }
+
+        .nav-01 {
+            color: #f6c465;
+        }
+
+        .nav-02 {
+            color: #da6f5f;
+        }
+
+        .nav-03 {
+            color: #71A9C5;
+        }
+
+        .nav-04 {
+            color: #b5aecd;
+        }
+
+        .nav-test {
+            color: #eb7e9b;
+        }
+
+        .icon, .icon-times.close {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navBar div:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) {
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width: 600px) {
+
+
+            .logo {
+                height: 70px;
+                width: 100%;
+                border-bottom: 2px solid #eeeeee;
+            }
+
+            .logo-pic {
+                position: relative;
+                top: 5px;
+            }
+
+            .navBar {
+
+                display: inline;
+            }
+
+
+            .navBar.responsive>.nav-item-box {
+                display: block !important;
+            }
+
+
+
+
+
+            .icon,
+            .icon-times {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background-color: #707070;
+                padding: 10px;
+                border-radius: 4px;
+                color: white;
+            }
+
+            .icon.close,
+            .icon-times.close {
+                display: none;
+            }
+
+
+            .nav-item-box {
+                border-right: none;
+                border-bottom: 2px solid #eeeeee;
+                height: 70px;
+                text-align: left;
+            }
+
+            .nav-item-box div {
+                display: inline;
+                line-height: 70px;
+                vertical-align: middle;
+            }
+
+            .nav-item-box>div:nth-child(2) {
+                font-size: 1.5em;
+                margin-left: 30px;
+            }
+
+            .nav-01 {
+                font-size: 2.5em;
+                margin-left: 20px;
+            }
+
+            .nav-02 {
+                font-size: 2.5em;
+                margin-left: 20px;
+            }
+
+            .nav-03 {
+                font-size: 2.5em;
+                margin-left: 20px;
+            }
+
+            .nav-04 {
+                font-size: 2.5em;
+                margin-left: 20px;
+            }
+
+            .nav-test {
+                font-size: 1.3em;
+                margin-left: 20px;
+            }
+
+            .down {
+                position: relative;
+                left: 100px;
+                border: solid black;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 5px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+
+
+
+        }
+
+
+
+
+        .pic-box {
+            display: flex;
+        }
+
+        .pic-01 {
+            background: url("./images/1.JPG") no-repeat;
+            background-size: cover;
+            width: 50%;
+            height: 300px;
+
+        }
+
+        .pic-02 {
+            background: url("./images/2.JPG") no-repeat;
+            background-size: cover;
+            width: 50%;
+            height: 300px;
+
+        }
+
+        .pic-03 {
+            background: url("./images/3.JPG") no-repeat;
+            background-size: cover;
+            width: 50%;
+            height: 300px;
+
+        }
+
+        .pic-04 {
+            background: url("./images/4.JPG") no-repeat;
+            background-size: cover;
+            width: 50%;
+            height: 300px;
+
+        }
+
+        .pic-text {
+            position: relative;
+            margin: 0px auto;
+            width: 60%;
+            top: 35%;
+            line-height: 5em;
+            top: 30%
+        }
+
+        .pic-text-top {
+            background-color: #f6c465;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+            width: 150px;
+            height: 50px;
+            position: relative;
+            margin: 0px auto;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 35px
+        }
+
+        .pic-text-bottom {
+            color: white;
+            font-weight: bold;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            .pic-box {
+                display: inline;
+            }
+
+            .pic-01 {
+                width: 100%;
+                height: 220px;
+            }
+
+            .pic-02 {
+                width: 100%;
+                height: 220px;
+            }
+
+            .pic-03 {
+                width: 100%;
+                height: 220px;
+            }
+
+            .pic-04 {
+                width: 100%;
+                height: 220px;
+            }
+
+            .pic-text {
+                line-height: 4em;
+                width: 100%;
+            }
+
+            .pic-text-bottom {
+                font-size: 1.9em;
+            }
+        }
+
+
+
+
+        .center-pic-box {
+            width: 100%;
+            position: absolute;
+        }
+
+        .center-pic {
+            background: url("./images/5.png") no-repeat;
+            background-size: cover;
+            width: 350px;
+            height: 350px;
+            margin: 0px auto;
+            margin-top: 140px;
+            line-height: 2.5em;
+        }
+
+        .center-text-box {
+            position: relative;
+            top: 120px;
+        }
+
+        .center-text-top {
+            color: #a49c9b;
+            font-size: 1.3em;
+            font-weight: bold;
+            width: 100px;
+            height: auto;
+            margin: 0px auto;
+            text-align: center;
+
+        }
+
+        .center-text-bottom {
+            color: black;
+            font-size: 1.5em;
+            width: 200px;
+            height: auto;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+
+
+            .center-pic-box {
+                width: 100%;
+                position: relative;
+                background-color: #fbe8af;
+            }
+
+            .center-pic {
+                margin-top: 0px;
+                width: 100%;
+                height: 250px;
+                position: relative;
+                background-size: 120%;
+                background-position: 40% 0%;
+            }
+
+
+        }
+
+
+
+
+
+        footer {
+            height: 85px;
+            background-color: #f7f7f7;
+            padding-left: 30px;
+        }
+
+        .footer-box {
+            margin: 0px auto;
+            position: relative;
+            top: 20px;
+            line-height: 1.5em;
+
+        }
+
+        .footer-text-big {
+            font-size: 1.2em;
+            color: #686868;
+        }
+
+        .footer-text-small {
+            font-size: 0.9em;
+            color: #686868;
+        }
+
+        .footer-text-small>span {
+            font-size: 0.9em;
+            color: red;
+        }
+
+
+
+        @media screen and (max-width: 600px) {
+            footer {
+                height: 100px;
+                padding-left: 10px;
+            }
+
+            .footer-text-small {
+                font-size: 0.5em;
+            }
+            
+        }
+
+
+
+        .line {
+            position: fixed;
+            right: 15px;
+            top: 180px;
+            background-color: #53b635;
+            padding: 9px;
+            border-radius: 6px;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="myNav" class="navBar">
+        <div class="logo">
+            <div class="logo-pic"></div>
+        </div>
+        <div class="icon" id="hamburger" onclick="myNavChange()">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="icon-times close" id="X" onclick="myNavChange()">
+            <i class="fas fa-times"></i>
+        </div>
+
+
+
+        <div class="nav-item-box" style="border-left:2px solid #f7f7f7">
+            <div class="nav-01">01</div>
+            <div>文字文字</div>
+            <i class="down"></i>
+        </div>
+
+        <div class="nav-item-box">
+            <div class="nav-02">02</div>
+            <div>文字文字</div>
+            <i class="down"></i>
+        </div>
+        <div class="nav-item-box">
+            <div class="nav-03">03</div>
+            <div>文字文字</div>
+            <i class="down"></i>
+        </div>
+        <div class="nav-item-box">
+            <div class="nav-04">04</div>
+            <div>文字文字</div>
+            <i class="down"></i>
+        </div>
+        <div class="nav-item-box">
+            <div class="nav-test">Test</div>
+            <div>文字文字</div>
+        </div>
+        <div class="nav-item-box">
+            <div class="nav-04">04</div>
+            <div>回首頁</div>
+        </div>
+
+
+    </nav>
+    <main>
+        <img class="line" src="./images/line.svg" alt="Line">
+
+        <div class="center-pic-box">
+            <div class="center-pic">
+                <div class="center-text-box">
+                    <div class="center-text-top">文字文字</div>
+                    <div class="center-text-bottom">文字文字 文字文字</div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="pic-box">
+            <div class="pic-01">
+                <div class="pic-text">
+                    <div class="pic-text-top">文字文字</div>
+                    <div class="pic-text-bottom">文字文字 文字文字</div>
+                </div>
+            </div>
+            <div class="pic-02">
+                <div class="pic-text">
+                    <div class="pic-text-top" style="background-color:#da6f5f;">文字文字</div>
+                    <div class="pic-text-bottom">文字文字 文字文字</div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="pic-box">
+            <div class="pic-03">
+                <div class="pic-text">
+                    <div class="pic-text-top" style="background-color:#71A9C5;">文字文字</div>
+                    <div class="pic-text-bottom">文字文字 文字文字</div>
+                </div>
+            </div>
+            <div class="pic-04">
+                <div class="pic-text">
+                    <div class="pic-text-top" style="background-color:#b5aecd;">文字文字</div>
+                    <div class="pic-text-bottom">文字文字 文字文字</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-box">
+            <div class="footer-text-big">文字文字</div>
+            <div class="footer-text-small">地址地址地址地址文字文字｜客服專線：<span>(02)0000-0000</span>｜<span>www.xxx.com.tw</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function myNavChange() {
+            var myNav = document.getElementById("myNav");
+            var X = document.getElementById("X");
+            var hamburger = document.getElementById("hamburger");
+            if (myNav.className === "navBar") {
+                myNav.className += " responsive";              
+                X.className = "icon-times";
+                hamburger.className += " close";
+            } else {
+                myNav.className = "navBar";
+                X.className += " close";
+                hamburger.className = "icon";
+            }
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
