@@ -90,6 +90,9 @@ function Footer() {
                 <li><a href="./index.html"><h4>功能網站（一）</h4></a></li>
                 <li><a href="./功能展示頁面2.html"><h4>功能網站（二）</h4></a></li>
                 <li><a href="./功能展示頁面3.html"><h4>功能網站（三）</h4></a></li>
+                <li><a href='./FakeInstagram.html'>功能展示頁面（四）</a></li>
+                <li><a href='./功能展示網站5.html'>功能展示頁面（五）</a></li>
+                <li><a href="https://thegreata.github.io/DcardProject/">Github Repos Searcher</a></li>
                 <li><a href="https://www.cakeresume.com/austin-lin-91d921"><h4 className="copyright">關於我</h4></a></li>
             </ul>
         </footer>
