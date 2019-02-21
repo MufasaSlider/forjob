@@ -206,9 +206,11 @@ function checkboxSubmit() {
     }
 
     for (let i = 0; i < boxChecked.length; i++) {
+        console.log(boxChecked.length);
         if (!boxChecked[i].checked) {
             for (let j = 0; j < placeDisplay[i].length; j++) {
                 placeDisplay[i][j].style.display = "none";
+                console.log(placeDisplay[i][j]);
             }
         }
     }

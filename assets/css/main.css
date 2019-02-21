@@ -185,7 +185,8 @@ nav {
         top: 55px;
         width: 100%;
         text-align: center;
-        background-color: rgb(242, 242, 242, 0.92);
+        background-color:#e1e1e1;
+        opacity: 0.92;
     }
 
     .toggle-sub>ul,
@@ -211,7 +212,7 @@ header {
 
 .banner-div {
     position: relative;
-    width: 100%;
+    /*width: 100%;*/
     height: 200px;
     left: 100px;
     top: 100px;
@@ -308,7 +309,7 @@ header {
     letter-spacing: 1px;
     border-radius: 0;
     color: whitesmoke;
-    background-color: rgb(105, 101, 83);
+    background-color: #686555;
     text-align: center;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -357,7 +358,7 @@ h3 {
 
 /*-------------------footer----------------*/
 footer {
-    background-color: rgb(54, 51, 51);
+    background-color: #363333;
     width: 100%;
     height: 300px;
 }
